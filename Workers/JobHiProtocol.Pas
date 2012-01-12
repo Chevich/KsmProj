@@ -1,0 +1,109 @@
+unit JobHiProtocol;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ABEForms, StdCtrls, SrcIndex, XDBForms, DBCtrls, ExtCtrls, Grids,
+  DBGrids, EtvGrid, XECtrls, ComCtrls, EtvPages, Mask, EtvContr, EtvLook,
+  ToolEdit, RXDBCtrl, EtvRXCtl, RXCtrls, XCtrls, EtvRich, EtvList, DBCGrids;
+
+type
+  TFormJobHiProtocol = class(TABEForm)
+    EditID: TXEDBEdit;
+    XLabel1: TXLabel;
+    EditDateOn: TXEDBDateEdit;
+    XLabel2: TXLabel;
+    EditTConferenceName: TXEDBLookupCombo;
+    XLabel3: TXLabel;
+    Grid1: TXEDbGrid;
+    XLabel9: TXLabel;
+    DBCtrlGrid1: TDBCtrlGrid;
+    EditIDD: TXEDBEdit;
+    XLabel11: TXLabel;
+    XLabel12: TXLabel;
+    EditDateOff: TXEDBDateEdit;
+    XLabel13: TXLabel;
+    EditNoteOff: TXEDBCombo;
+    XLabel14: TXLabel;
+    EditText: TDBMemo;
+    EditExecutors: TDBMemo;
+    XLabel15: TXLabel;
+    EtvDBText1: TEtvDBText;
+    EditDateExec: TXEDBDateEdit;
+    XLabel4: TXLabel;
+    EditConfirm: TXEDBCheckBox;
+    EditNote: TDBMemo;
+    XLabel5: TXLabel;
+    procedure EditConfirmClick(Sender: TObject);
+    procedure DBCtrlGridSetColorForRow(aColor:TColor);
+    procedure DBCtrlGrid1PaintPanel(DBCtrlGrid: TDBCtrlGrid; Index: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var FormJobHiProtocol: TFormJobHiProtocol;
+
+implementation
+uses XMisc,TypInfo, MdWorkers;
+
+{$R *.DFM}
+procedure TFormJobHiProtocol.EditConfirmClick(Sender: TObject);
+begin
+  inherited;
+  with TXEDBCheckBox(Sender) do begin
+    if Focused and (Checked=true) then
+      if MessageDlgPos('”¬¿∆¿≈Ã€… À≈ŒÕ»ƒ ¿À≈ —¿Õƒ–Œ¬»◊!'#13+'¬€ ”“¬≈–∆ƒ¿≈“≈ “≈ —“ œŒ–”◊≈Õ»ﬂ, »—œŒÀÕ»“≈À≈… » —–Œ »?',mtWarning,[mbYes, mbNo],0,
+        DbCtrlGrid1.Left+Left,DbCtrlGrid1.Top+Top+Height+80)<>idYes then begin
+        State:=cbUnChecked;
+        Abort;
+      end;
+    if Focused and (Checked=false) then
+      if MessageDlgPos('”¬¿∆¿≈Ã€… À≈ŒÕ»ƒ ¿À≈ —¿Õƒ–Œ¬»◊!'#13+'¬€ Œ“Ã≈Õﬂ≈“≈ ”“¬≈–∆ƒ≈Õ»≈ œŒ–”◊≈Õ»ﬂ, »—œŒÀÕ»“≈À≈… » —–Œ »?',mtWarning,[mbYes, mbNo],0,
+        DbCtrlGrid1.Left+Left,DbCtrlGrid1.Top+Top+Height+80)<>idYes then begin
+        State:=cbChecked;
+        Abort;
+      end;
+  end;    
+end;
+
+procedure TFormJobHiProtocol.DBCtrlGridSetColorForRow(aColor:TColor);
+var i:byte;
+    PropInfo: PPropInfo;
+begin
+  with TDBCtrlPanel(DBCtrlGrid1.Controls[0]) do
+    for i:=0 to ControlCount-1 do begin
+      PropInfo:=GetPropInfo(Controls[i].ClassInfo,'Color');
+      if PropInfo <> nil then
+      SetOrdProp(Controls[i],PropInfo,aColor);
+    end;
+end;
+
+procedure TFormJobHiProtocol.DBCtrlGrid1PaintPanel(DBCtrlGrid: TDBCtrlGrid; Index: Integer);
+var aColor:TColor;
+    i:byte;
+    PropInfo: PPropInfo;
+begin
+  with ModuleWorkers.JobHiDeclar.FieldByName('NoteOff') do
+    if Value=Null then aColor:=clWindow
+    else case AsInteger of
+         1: aColor:=$00D5FBD0; { —‚ÂÚÎÓ-ÁÂÎÂÌ˚È }
+         0: aColor:=$00DCD9FF; { —‚ÂÚÎÓ-Í‡ÒÌ˚È }
+       end;
+  with TDBCtrlPanel(DBCtrlGrid1.Controls[0]) do
+    for i:=0 to ControlCount-1 do if (Pos('Edit',Controls[i].Name)>0) and (Controls[i].Name<>'EditConfirm') then begin
+      PropInfo:=GetPropInfo(Controls[i].ClassInfo,'Color');
+      if PropInfo <> nil then
+      SetOrdProp(Controls[i],PropInfo,aColor);
+    end;
+  {EditExecutors.Color:=aColor;}
+  inherited;
+end;
+
+Initialization
+  RegisterAliasXForm('FormJobHiProtocol', TFormJobHiProtocol);
+Finalization
+  UnRegisterXForm(TFormJobHiProtocol);
+end.

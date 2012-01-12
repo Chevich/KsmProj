@@ -1,0 +1,45 @@
+package RtlLnkx4;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS OFF}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'LinkX-library run-time'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+{$DEFINE Delphi3}
+{$DEFINE Delphi4}
+{$DEFINE Pro}
+
+requires
+  RtlEOth4;
+
+contains
+  CalcDlg in '..\link4\CalcDlg.pas',
+  XEFIelds in 'XEFIelds.pas',
+  XETrees in 'XETrees.pas',
+  XSBForm in 'XSBForm.pas',
+  BBEForms in 'BBEForms.pas',
+  MBEForms in 'MBEForms.pas',
+  ABEForms in 'ABEForms.pas',
+  AEForms in 'AEForms.pas';
+
+end.

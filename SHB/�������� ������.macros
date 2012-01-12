@@ -1,0 +1,559 @@
+Sub CurrencyJournal2()
+'
+' Journal2 Макрос
+' Макрос записан 08.04.2003 (Pavel A. Baulin)
+'
+Dim CurrentCell As Range
+    Rows("1:2").Select
+    Selection.Delete Shift:=xlUp
+    Columns("B:B").Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlRight
+        .VerticalAlignment = xlCenter
+    End With
+    Columns("C:Z").Select
+    'Range("B4").Activate
+    Selection.NumberFormat = "#,##0.00"
+' Вычисляем вспомогательные ячейки
+    d1 = FirstEmptyInRow(Range("A5"))
+    Range(d1).Activate
+    Set CurrentCell = Range(d1)
+    zz1 = CurrentCell.Offset(-2, -5).Address()
+    z1 = CurrentCell.Offset(-1, -2).Address()
+' Формируем заголовок журнала
+    Range("B1", zz1).Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    Selection.Merge
+    ActiveCell.FormulaR1C1 = _
+    "=""Журнал-ордер № 2 за ""&LOWER(TEXT(R[5]C,""ММММ""))&"" ""&YEAR(R[5]C)&"" года. Валютные счета."""
+    With Selection.Font
+        .Name = "Arial"
+        .Size = 15
+        .Bold = True
+        .Italic = True
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ColorIndex = xlAutomatic
+    End With
+' Формируем заголовок дебета
+    Range("B4", z1).Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    Selection.Merge
+    With Selection.Font
+        .Bold = True
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ColorIndex = xlAutomatic
+    End With
+    ActiveCell.FormulaR1C1 = "В дебет счета 52 с кредита счетов"
+' Форматируем заголовки счетов
+    dd1 = FindValueInColumn(Range("A1"), 5)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 41)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 81)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 121)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 161)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 201)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 241)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 281)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 321)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 361)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 401)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+
+    
+    
+    dd1 = FindValueInColumn(Range("A1"), 1400)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1441)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1481)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1521)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1561)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1601)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1641)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1681)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1721)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1761)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    dd1 = FindValueInColumn(Range("A1"), 1801)
+    Range(dd1).EntireRow.Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    
+
+' Формируем заголовок кредита
+    mmmm = FindValueInColumn(Range("A1"), 118)
+    Range(mmmm).Activate
+    mmmm = FirstEmptyInRow(Range(mmmm))
+    Set CurrentCell = Range(mmmm)
+    mmmm = CurrentCell.Offset(1, -1).Address()
+    mmm = FindValueInColumn(Range("A1"), 121)
+    Range(mmm).Activate
+    Range(mmm).EntireRow.Select
+    Selection.Insert Shift:=xlDown
+    mmm = FindValueInColumn(Range("A1"), 121)
+    ssss = FindValueInColumn(Range("A1"), 900)
+    Range(ssss).Activate
+    ssss = FirstEmptyInRow(Range(ssss))
+    Set CurrentCell = Range(ssss)
+    ssss = CurrentCell.Offset(0, -1).Address()
+    tt = FindValueInColumn(Range("A1"), 1400)
+    Range(tt).Activate
+    k1 = FirstEmptyInRow(Range(tt))
+    Range(tt).EntireRow.Select
+    Selection.Insert Shift:=xlDown
+    Range(k1).Activate
+    Set CurrentCell = Range(k1)
+    k2 = CurrentCell.Offset(0, -1).Address()
+    sss = CurrentCell.Offset(0, -1).Address()
+    Range(tt).Activate
+    Set CurrentCell = Range(tt)
+    k3 = CurrentCell.Offset(0, 1).Address()
+    Range(k3, k2).Select
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    Selection.Merge
+    ActiveCell.FormulaR1C1 = "С кредита счета 52 в дебет счетов"
+    Range(tt).Activate
+    Set CurrentCell = Range(tt)
+    Range(tt).EntireRow.Select
+    Selection.Insert Shift:=xlDown
+    Range(tt).Activate
+    Set CurrentCell = Range(tt)
+    nnn = CurrentCell.Offset(1, 0).Address()
+'   nnn  = CurrentCell.Offset(0, 1).Address()
+    vvvv = FindValueInColumn(Range("A1"), 1518)
+    Range(vvvv).Activate
+    vvvv = FirstEmptyInRow(Range(vvvv))
+    Set CurrentCell = Range(vvvv)
+    vvvv = CurrentCell.Offset(1, -1).Address()
+    uuuu = FindValueInColumn(Range("A1"), 1521)
+    Range(uuuu).Activate
+    Range(uuuu).EntireRow.Select
+    Selection.Insert Shift:=xlDown
+    uuuu = FindValueInColumn(Range("A1"), 1521)
+    qqqq = FindValueInColumn(Range("A1"), 2500)
+    Range(qqqq).Activate
+    qqqq = FirstEmptyInRow(Range(qqqq))
+    Set CurrentCell = Range(qqqq)
+    qqqq = CurrentCell.Offset(4, -1).Address()
+
+' Формируем подписи
+    k4 = FindValueInColumn(Range("B4"), "Итого по кредиту")
+    Set CurrentCell = Range(k4)
+    k4 = CurrentCell.Offset(1, 0).Address()
+    k5 = FindValueInColumn(Range("A1"), 1881)
+    Set CurrentCell = Range(k5)
+    k5 = CurrentCell.Offset(0, 1).Address()
+    k5 = FirstNotEmptyInRow(Range(k5))
+    Set CurrentCell = Range(k5)
+    k5 = CurrentCell.Offset(2, -1).Address()
+    Range(k4, k5).Select
+    Range(k4).Activate
+    With Selection
+        .Borders(xlDiagonalDown).LineStyle = xlNone
+        .Borders(xlDiagonalUp).LineStyle = xlNone
+        .Borders(xlEdgeLeft).LineStyle = xlNone
+        .Borders(xlEdgeTop).LineStyle = xlThin
+        .Borders(xlEdgeBottom).LineStyle = xlNone
+        .Borders(xlEdgeRight).LineStyle = xlThin
+        .Borders(xlInsideVertical).LineStyle = xlNone
+        .Borders(xlInsideHorizontal).LineStyle = xlNone
+    End With
+    Set CurrentCell = Range(k4)
+    Range(CurrentCell.Offset(2, 1).Address()).Activate
+    ActiveCell.FormulaR1C1 = "Исполнитель_______________"
+    Range(CurrentCell.Offset(2, 4).Address()).Activate
+    ActiveCell.FormulaR1C1 = "Главный бухгалтер____________________"
+    ttt = FindValueInColumn(Range("A1"), 1883)
+    ss = ttt
+    Set CurrentCell = Range(ttt)
+    ttt = CurrentCell.Offset(1, 0).Address()
+    
+'Устанавливаем разметку страниц
+'    ActiveWindow.View = xlPageBreakPreview
+'    Set ActiveSheet.HPageBreaks(1).Location = Range(tt)
+'    Set ActiveSheet.HPageBreaks(2).Location = Range(ttt)
+'    ActiveWindow.View = xlNormalView
+' Установка отступов на странице и масштаба
+    With ActiveSheet.PageSetup
+        .PrintTitleRows = ""
+        .PrintTitleColumns = ""
+    End With
+    ActiveSheet.PageSetup.PrintArea = ""
+    With ActiveSheet.PageSetup
+        .LeftHeader = ""
+        .CenterHeader = ""
+        .RightHeader = ""
+        .LeftFooter = ""
+        .CenterFooter = ""
+        .RightFooter = ""
+        .LeftMargin = Application.InchesToPoints(0.4)
+        .RightMargin = Application.InchesToPoints(0.4)
+        .TopMargin = Application.InchesToPoints(0.4)
+        .BottomMargin = Application.InchesToPoints(0.4)
+        .HeaderMargin = Application.InchesToPoints(0.51)
+        .FooterMargin = Application.InchesToPoints(0.51)
+        .PrintHeadings = False
+        .PrintGridlines = False
+        .PrintComments = xlPrintNoComments
+'       .PrintQuality = 600
+        .CenterHorizontally = False
+        .CenterVertically = False
+        .Orientation = xlLandscape
+        .Draft = False
+        .PaperSize = xlPaperA4
+        .FirstPageNumber = xlAutomatic
+        .Order = xlDownThenOver
+        .BlackAndWhite = False
+        .Zoom = False
+        .FitToPagesWide = 2
+        .FitToPagesTall = 1
+'       .PrintErrors = xlPrintErrorsDisplayed
+    End With
+'Устанавливаем области печати
+    ActiveSheet.PageSetup.PrintArea = "$A$1:" + mmmm + "," + mmm + ":" + ssss + "," + nnn + ":" + vvvv + "," + uuuu + ":" + qqqq
+    Columns("A:A").Select
+    Selection.Delete Shift:=xlLeft
+    Set CurrentCell = Range(mmmm)
+    mmmm = CurrentCell.Offset(0, -1).Address()
+    Set CurrentCell = Range(ssss)
+    ssss = CurrentCell.Offset(0, -1).Address()
+    Set CurrentCell = Range(vvvv)
+    vvvv = CurrentCell.Offset(0, -1).Address()
+    Set CurrentCell = Range(qqqq)
+    qqqq = CurrentCell.Offset(0, -1).Address()
+    ActiveSheet.PageSetup.PrintArea = "$A$1:" + mmmm + "," + mmm + ":" + ssss + "," + nnn + ":" + vvvv + "," + uuuu + ":" + qqqq
+    Cells(1, 1).Select
+
+End Sub
+
+
+
+
+
+
+    
+    
+Function FindValueInRow(aRow As Range, aValue As String)
+' Возвращение адреса первой пустой ячейки строки диапазона
+r = aRow.Row
+c = aRow.Column
+Do While (Cells(r, c).Value <> aValue) Or (c > 128)
+  c = c + 1
+Loop
+FindValueInRow = Cells(r, c).Address
+End Function
+
+Function FindValueInColumn(aRow As Range, aValue As String)
+' Возвращение адреса первой пустой ячейки строки диапазона
+r = aRow.Row
+c = aRow.Column
+Do While (Cells(r, c).Value <> aValue) Or (r > 1000)
+  r = r + 1
+Loop
+FindValueInColumn = Cells(r, c).Address
+End Function
+
+

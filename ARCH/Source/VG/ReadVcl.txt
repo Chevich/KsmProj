@@ -1,0 +1,212 @@
+
+                    Vladimir Gaitanoff Delphi VCL Library
+                    -------------------------------------
+
+1. Overview
+2. Components
+3. Libraries
+4. Installation
+5. Notes
+
+1. Overview
+-----------
+    VG Library contains a large number of different components and a few
+function libraries. Library distrubuted with full source code and is 
+compatible with Delphi 2, 3 and 4. 
+
+    Library includes Russian (native), English and Spanish string resources.
+
+    VG library contains a few components that reqires RX library to be 
+installed. These components are optional. To use them you should install and 
+compatible with RX library 2.30 up to 2.60.
+
+    Unfortunately there is no help available.
+
+2. Components
+-------------
+    Components are splitted into five parts: System, Controls, Explorer,
+    Data Access, and Data Controls.
+
+    TvgThread is the TThread wrapper.
+
+    TMoneyString translates numeric values into their verbal representation.
+
+    TDateTimeStorage and TCurrencyStorage components updates local settings
+    internally used by your application.
+
+    TFormLoader component simplifies merging forms into TWinControl descendents
+    and usable for creating multi-sheet forms and user interfaces.
+
+    TMSSCScript component wrapps Microsoft TScriptControl and enables you to
+    write and execute Visual Basic and JavaScript scripts within your
+    application.
+
+    TTranslator component iterates through string-like properties of given
+    instances allowing to translate them into another languages.
+
+    TvgSplitter control has the same functionality as the standart TSplitter.
+
+    TJustifyEdit is an obsolete control. See TClickEdit for details.
+
+    TClickEdit looks like standart TEdit and enables to align editing text.
+    It has optional button with bitmap at the right side.
+
+    TTitler is a custom panel that shows scrolling text.
+
+    TvgPageControl is a TPageControl descendent that has all properties of
+    component released in Delphi 4. There is also TvgTabSheet control which
+    supports ImageIndex property.
+
+    TvgNoteBook is TNotebook descendent with 3D view.
+
+    TvgTabSet is custom-draw TTabSet. It allows to orient tabs on all sides
+    of control.
+
+    TExplorerNodes descendents provides you with powerfull API of handling
+    tree-like data structures.
+
+    Explorer controls represent structure of TExplorerNodes in different
+    ways. Library includes TExplorerTreeView, TExplorerListView,
+    TExplorerListBox and TExplorerTreeCombo controls.
+
+    TvgDatabase provides you with advanced transaction control for
+    multithreaded applications. It allows easy programming of database
+    locking during transactions for RDMs written in apartment or free
+    threading model.
+
+    TvgQuery extends functionality of TRxQuery (RX library). It automatically
+    refreshes when params or macros are changed.
+
+    TvgSQLScript has functionality as TSQLScript (RX library). It executes
+    multiple SQL statements like original TSQLScript and has additional
+    events. TvgSQLScript provides you with macro extensions of SQL like
+    TRxQuery does.
+
+    TvgUpdateScript is TUpdateObject descendent that enables to write
+    multiple SQL statements while applying updates with cached updates
+    mechanism.
+
+    TFieldSource is the TFieldDataLink wrapper. It "filters" data events
+    that send TDataSource on listed fields.
+
+    TOpenTables manages list of open datasets. It counts references on
+    dataset and closes it when dataset is no more needed.
+
+    TBDEDataSetHook reassign dataset events to allow splitting buisness-logic 
+    into parts.
+
+    TDBConverter, TBDEConverter provides you with codeless techinque of
+    converting old databases into databases with new structure.
+
+    TvgDBGrid is the same as TRxDBGrid (RX library) and has miscelaneous
+    visual enhancements: row colors.
+
+    TvgQuickSearch and TRxQuickSearch provides incremental search in TDBGrid.
+    Pressing Ctrl+C user can copy contents of grid into Clipboard.
+
+    TvgDBLookupCombo is the same as TRxDBLookupCombo. It has optional small
+    button which can be pressed to show modal dialogs with data dictionaries
+    or to perform other actions.
+
+    TvgDBTreeView, TvgDBTreeCombo components navigates through tree-like
+    datasets.
+
+    TvgDBMenu is TDBNavigator in the form of popup menu.
+
+    TDBRadioButton is just radio button that doesn't require TDBRadioGroup.
+
+    TvgWordPrint is a powerfull component family that provides you with
+    open report system for Microsoft Word. Family includes full-functional
+    components that works with data of BDE and DBClient datasets.
+
+3. Libraries
+------------
+  vgUtils.pas
+      Components (copying, cloning, iterators), nill-able lists, Variant
+      (comparing, NVL-functions), floating-point (comparing), log files,
+      ini/registry etc.
+  vgTlHelp.pas
+      List of running process (Windows 95)
+  vgVCLUtl.pas
+      Cursor, drawing, iterations of controls etc.
+  vgDBUtl.pas
+      Working with TDataSet, TField, SELECT and UPDATE SQL generation,
+      NVL-functions for fields, Clipboard support, primary key bokmarks,
+      dataset refreshing, full search locating, BeforePost validators etc.
+  vgDBPrms.pas
+      Working with TParams
+  vgBDEUtl.pas
+      Transaction support, on-the-fly querying, UpdateSQL building,
+      CachedUpdates editing, exception translation etc.
+  vgCachUp.pas
+      CachedUpdates editing
+  vgOleUtl.pas
+      Speed up OLE automation into 2 times
+  vgComObj.pas
+      Helper classes for COM servers, working with Variant through stremas,
+      Variant compression
+  vgSystem.pas
+      Special TThread descendents, compressors etc.
+  vgMemory.pas
+      Native WinAPI memory manager
+  vgSock.pas
+      Winsock utility routines
+  ConstsRC.pas
+      On-the-fly localizing of Consts.pas for D3 and D4
+  DBConstRC.pas
+      On-the-fly localizing of DBConsts.pas for D3 and D4
+
+4. Installation
+---------------
+    1. Delphi 4.
+    Library includes six design-time packages: vgDVCL4, vgDDB4, vgDMID4, 
+    vgDRXDB4, vgMID24, vgDWP4.
+
+    If you don't have Client/Server Delphi editon comment out MIDAS conditional 
+    define in the VG.INC include file.
+
+    Compile and install packages vgDVCL4, vgDDB4, vgDMID4, vgDWP4.
+
+    If you have RX library 2.50 or higher compile and install package vgDRXDB4.
+
+    If you have both Client/Server Delphi edition and RX library 2.50 or higher 
+    compile and install vgMID24 .    
+
+    Add path to compiled dcu files to Library Path string.
+
+    2. Delphi 3.
+    Perform steps listed above for packages vgDVCL, vgDDB, vgDMID, 
+    vgDRXDB, vgMID2, vgDWP.
+
+    3. Delphi 2.
+
+    In "Install components" choose vgVCLRg, vgDBRg, vgWPReg, vgRXDBRg (if RX
+    library 2.30 or higher already installed).  
+
+5. Notes
+--------
+   1. VG library requires next files in the system path:
+     MSVCRT.DLL
+     vgLZSS32.DLL
+     vgI0.DLL
+
+   2. If RX library is 2.40 or higher make sure that key RX240 is defined in
+   include file VG.INC.
+
+   3. Uncomment MIDAS condition in include file VG.INC if have client/server 
+   Delphi editon and VG Midas Library on search path.
+
+   4. DBCLIENT.DLL must be version 5.00 or higher.
+
+   5. Don't save packages within Delphi IDE to prevent conditional defines
+   corruption.
+
+   6. TTranslator, TMSSCScript components are betas.
+
+   7. Microsoft Script Control OCX is required to use TMSSCScript.
+   It is available at http://www.microsoft.com/scripting.
+
+-------------------------------------------
+Vladimir Gaitanoff
+  WWW:             http://www.tsinet.ru/~vg/
+  E-mail:          vg@tsinet.ru

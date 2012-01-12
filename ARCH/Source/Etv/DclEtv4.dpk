@@ -1,0 +1,44 @@
+package DclEtv4;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS OFF}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'Etv Library'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+{$DEFINE Delphi3}
+{$DEFINE Delphi4}
+{$DEFINE Pro}
+
+requires
+  dcldb40,
+  RtlEtv4;
+
+contains
+  Etvreg in 'Etvreg.pas',
+  EtvDsgn in 'EtvDsgn.pas',
+  EtvDsSt in 'EtvDsSt.pas',
+  EtvDsLk in 'EtvDsLk.pas',
+  EtvDsPg in 'EtvDsPg.pas',
+  EtvExp in 'EtvExp.pas';
+
+end.

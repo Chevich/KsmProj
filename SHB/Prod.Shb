@@ -1,0 +1,44 @@
+//Kod        ProdSimpleKod:        TSmallintField    Код  5
+//KodUp      ProdSimpleKodUp:      TSmallintField    Код верхнего уровня  5
+//KodUpName  ProdSimpleKodUpName:  TEtvLookField[50] Верхний уровень  50  LOOKUP(KodUp,ProdLookup,Kod,Kod;Name)
+//Name       ProdSimpleName:       TStringField[40]  Наименование продукции  40
+//FullName   ProdSimpleFullName:   TStringField[70]  Полное наименование  70
+//TProd      ProdSimpleTProd:      TSmallintField    Тип продукции  10
+//GrProd     ProdSimpleGrProd:     TSmallintField    Группа продукции  10
+//UnitM      ProdSimpleUnitM:      TSmallintField    Ед.изм.  10
+//UnitMName  ProdSimpleUnitMName:  TEtvLookField[8]  Ед. изм.  8  LOOKUP(UnitM,UnitMLookup,Kod,Kod;Name)
+//SLength    ProdSimpleSLength:    TFloatField       Длина  5
+//Height     ProdSimpleHeight:     TSmallintField    Высота  10
+//Width      ProdSimpleWidth:      TFloatField       Ширина  6
+//Massa      ProdSimpleMassa:      TFloatField       Масса  5
+//Volume     ProdSimpleVolume:     TFloatField       Объем  10
+//Shop       ProdSimpleShop:       TSmallintField    Подразделение  10
+//ShopName   ProdSimpleShopName:   TEtvLookField[25] Подразделение  25  LOOKUP(Shop,ShopLookup,Kod,Kod;Name)
+//Standard   ProdSimpleStandard:   TStringField[30]  ГОСТ  30
+//AmountDown ProdSimpleAmountDown: TIntegerField     Узлов на уровень ниже  10
+
+#Default=Prod
+#Unit=Prod.UnitMName,Name
+#Len=Prod.SLength
+#Sqr=Prod.Square
+#Hgt=Prod.Height
+                                СПРАВОЧНИК ВИДОВ ПРОДУКЦИИ
+          по состоянию на <      A.DateStr>        <                             A.BranchName >
+--------------------------------------------------------------------------------------------------
+| КОД  |       НАИМЕНОВАНИЕ       |  ЕД.ИЗМ.    | ОБЪЕМ  | МАССА  | ПЛО-  | ДЛИНА |ШИРИНА | ТОЛ- |
+| ПРОД |                          |             | М.КУБ. |        | ЩАДЬ  |       |ВЫСОТА | ЩИНА |
+--------------------------------------------------------------------------------------------------
+while Prod do begin
+   if AmountDownNotIsNull then
+     if DrawLine then
+--------------------------------------------------------------------------------------------------
+     end;
+           Kod> <                                                                     FullName>
+   else begin
+     if DrawLine then
+--------------------------------------------------------------------------------------------------
+     end;
+  Kod> | <                  Name*>| <     Unit*>|Volume> | Massa> |  Sqr> |  Len> |Width> | Hgt> |
+   end;
+end;
+--------------------------------------------------------------------------------------------------

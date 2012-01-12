@@ -1,0 +1,117 @@
+[Compiler]
+A=1
+B=0
+C=1
+D=1
+E=0
+F=0
+G=1
+H=1
+I=1
+J=1
+K=0
+L=1
+M=0
+N=1
+O=0
+P=1
+Q=0
+R=0
+S=0
+T=0
+U=0
+V=1
+W=1
+X=1
+Y=0
+Z=1
+ShowHints=0
+ShowWarnings=0
+UnitAliases=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[Linker]
+MapFile=0
+OutputObjs=0
+ConsoleApp=1
+DebugInfo=0
+RemoteSymbols=0
+MinStackSize=16384
+MaxStackSize=1048576
+ImageBase=4194304
+ExeDescription=
+
+[Directories]
+OutputDir=
+UnitOutputDir=
+PackageDLLOutputDir=c:\b
+PackageDCPOutputDir=
+SearchPath=c:\b\MsDebug\MsLib
+Packages=VCLX40;VCL40;VCLSMP40;VCLDB40;VCLDBX40;RxCtl4;RxDB4;rbBDE44;rbRCL44;rbIDE44
+Conditionals=Delphi3;Delphi4;Pro
+DebugSourceDirs=
+UsePackages=1
+
+[Parameters]
+RunParams=-u -AliasName=GKSM
+HostApplication=
+
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+FileVersion=1.0.0.0
+
+[Excluded Packages]
+C:\B\Titan\Allegro\SQLANY\Standard\BSETITAN.BPL=Titan Base Classes
+$(DELPHI)\Bin\dcl31w40.bpl=Delphi 1.0 Compatibility Components
+$(DELPHI)\Bin\dclint40.bpl=Borland Resource DLL Wizard
+$(DELPHI)\Bin\dclqrt40.bpl=QuickReport Components
+$(DELPHI)\Bin\dcltee40.bpl=Borland TeeChart Components
+$(DELPHI)\Bin\dcldss40.bpl=Borland Decision Cube Components
+$(DELPHI)\Bin\dclmid40.bpl=Borland MIDAS Components
+$(DELPHI)\Bin\dclnet40.bpl=Borland Internet Components
+$(DELPHI)\Bin\DBWEBXPRT.BPL=Borland Web Wizard Package
+$(DELPHI)\Bin\dclocx40.bpl=Borland Sample Imported ActiveX Controls
+C:\B\Titan\Allegro\SQLANY\Standard\SQATITAN.BPL=Titan SqlAnywhere
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=Delphi3;Delphi4;Pro
+
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[HistoryLists\hlSearchPath]
+Count=5
+Item0=c:\b\MsDebug\MsLib;
+Item1=c:\b\MsDebug\MsLib;c:\b\rb4\source
+Item2=c:\b\MsDebug\MsLib
+Item3=c:\b\rb4\source;c:\b\MsDebug\MsLib
+Item4=c:\b\rb4\source
+
+[HistoryLists\hlRunParameters]
+Count=7
+Item0=-u -AliasName=GKSM
+Item1=-p -AliasName=GKSM
+Item2=-u -AliasName=LOC_GKSM
+Item3=-p -AliasName=LOC_GKSM
+Item4=-uKUL -pKUL -AliasName=LOC_GKSM
+Item5=-uKUL -pKUL -AliasName=GKSM
+Item6=-AliasName=GKSM
+
+[HistoryLists\hlBPLOutput]
+Count=1
+Item0=c:\b

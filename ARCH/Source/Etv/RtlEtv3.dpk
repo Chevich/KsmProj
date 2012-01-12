@@ -1,0 +1,71 @@
+package RtlEtv3;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'EtvLibrary'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+{$I Etv.inc}
+
+requires
+  VCLDB30,
+  VCLSMP30;
+
+contains
+  Etvbor,
+  EtvConst,
+  EtvDB,
+  EtvDBFun,
+  EtvMem,
+  EtvOther,
+  Etvpas,
+  EtvPopup,
+  DiAdv,
+  DiDual,
+  EtvContr,
+  {$IFDEF BDE_IS_USED}
+  EtvTable,
+  {$ENDIF}  
+  {$IFDEF DBCLIENT_IS_USED}
+  EtvMidas,
+  {$ENDIF}  
+  EtvPrint,
+  DiPrint,
+  EtvList,
+  EtvLook,
+  EtvGrid,
+  EtvClone,
+  EtvFilt,
+  EtvFind,
+  EtvSort,
+  DiFind,
+  Filter,
+  EtvRich,
+  DiPara,
+  DiReplace,
+  EtvPages,
+  Etvforms,
+  fBase;
+
+end.

@@ -1,0 +1,88 @@
+                    Vladimir Gaitanoff Delphi VCL library
+                         Changes since 1 Feb, 1999
+
+New components
+  TvgSocketConnection
+  TvgSocketDispatcher
+  TMSSCScript
+  TTranslator
+  TDatabaseProvider
+  TvgClientDatabase 
+  TvgClientTable, TvgClientQuery, TvgClientStoredProc
+  TvgClientSQLSript, TvgClientUpdateSQL, TvgClientUpdateScript
+  TvgClientBatchMove
+  TDBHistoryComboBox
+
+New classes
+  TCustomWaitThread
+  TWaitThread
+  TWinFileStream
+  TUpdateObject, TUpdateSQLObject
+  TvgThreadList
+
+New procedures and functions
+  vgUtils.pas
+    PosText
+    StrToFloatDef
+    ListDestroyObjectsAll, ListFreeMem, ListFreeMemAll
+    GetPropInfoList
+    EnumStrings, EnumVarArray
+    GetTempFileName, BackupFile, CheckBackupFile
+    LoadComponent, SaveComponent
+    CreateComponentOwnerNeeded, CreateComponentNeeded, CreateCloneOwnerNeeded,
+    CreateCloneNeeded, FreeObject
+  vgVCLUtl.pas
+    LoadComponentWait, SaveComponentWait
+  vgSock.pas
+    LoadWinSock2, WSACreateEvent, WSAResetEvent, WSACloseEvent, WSAEventSelect
+  vgOleUtl.pas
+    WideCharToNames, VarToDispatch, VarToInterface, GetIDsOfNames, DispatchInvoke
+  vgDBUtl.pas
+    SetDBParams, AssignDBParams, UpdateBlobDBParams,
+    ClearDBParam, ClearDBParams, FindDBParam, DBParamRequired,
+    SetUpdateDBParams, CreateDBParams,
+    NameDelimiter, IsLiteral, StripLiterals
+    GetFieldNamesStr, GetFieldNamesStrComma
+    GetNewFieldValues, GetCurFieldValues, GetNewFieldValues
+    FieldDefsToVariant, VariantToFieldDefs 
+    IndexDefsToVariant, VariantToIndexDefs
+    GetFieldNamesFromList
+    QuoteSQLNameWith
+  vgBDEUtl
+    BatchMove
+  vgComObj.pas
+    StringsFromIStrings, StringsToIStrings
+
+New units
+  vgOleUtl.pas
+  vgCDSUtl.pas
+
+Other
+  Library splitted into six packages:
+    Delphi 3: vgDVCL, vgDDB, vgDMID, vgDRXDB, vgDMID2, vgDWP
+    Delphi 4: vgDVCL4, vgDDB4, vgDMID4, vgDRXDB4,vgDMID24, vgDWP4
+  procedure AddLog removed from library
+  type TLogDetail removed from library
+  TUpdateScriptProvider: new events OnBeforeUpdateData, OnAfterUpdateData
+  TDBConvertItem: new event OnRecordError
+  vgOleFix.pas renamed to vgOleUtl.pas
+  TvgTabSheet.ImageIndex bug fixed
+  TCharSet type declaration moved from vgDBPrms.pas to vgDB.pas
+  TSinglePointServer rewritten to support TvgRemoteDataModule
+  SinglePt.pas removed from library
+  TUpdateScriptProvider AssignMacros bug fixed
+  DRExecute for queries returns RowsAffected
+  SQLWithParamA fixed to return RowsAffected
+  TrxQuickSearch uses TLocateObject against TDBLocate
+  TvgCustomRemoteServer User property renamed to UserName
+  cmHelp button added to TDialogForm
+  FetchDBParams bug fixed
+  vgDBClnt.pas splitted into vgCDS.pas and vgCDSUtl.pas
+  WordPrint bugs (Delphi 4) are fixed
+  TvgDBTreeView: new method LookupNodeText
+  SQLBased: global variable added
+
+--------------------------------------------
+Vladimir Gaitanoff
+  WWW:             http://www.tsinet.ru/~vg/
+  E-mail:          vg@tsinet.ru

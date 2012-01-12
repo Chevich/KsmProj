@@ -1,0 +1,62 @@
+	ETV LIBRARY 
+	License Agreement
+
+Before proceeding with the installation or use of this software
+read the following terms and conditions of this license agreement
+and limited warranty (The "Agreement").
+
+If you do not agree with the terms of this license you must remove
+ETV LIBRARY files from your storage devices and cease to use the 
+product. 
+
+1. This software, including documentation, source code, object code 
+and/or additional materials is owned by ETV LIBRARY authors.
+This Agreement does not provide you with title or ownership 
+of this software, but only a right of limited use as outlined in 
+this license agreement.
+
+2. Once registered, the user is granted a non-exclusive license to use 
+ETV LIBRARY on as many computers as defined by the licensing terms above 
+according to the number of licenses purchased, for any legal purpose.  
+The registered ETV LIBRARY software may not be rented or leased, but may be 
+permanently transferred, in it's entirety, if the person receiving it 
+agrees to the terms of this license.  If the software is an update, 
+the transfer must include the update and all previous versions. 
+
+3. ETV LIBRARY IS DISTRIBUTED "AS IS".  NO WARRANTY OF ANY KIND IS 
+EXPRESSED OR IMPLIED. YOU USE AT YOUR OWN RISK. THE AUTHOR WILL NOT 
+BE LIABLE FOR DATA LOSS, DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF 
+LOSS WHILE USING OR MISUSING THIS SOFTWARE. 
+
+4. You may write and compile your own application programs using the 
+ETV LIBRARY, distribute runtime packages for the sole purpose of executing 
+application programs created with Delphi.
+
+5. You may not use, distribute, clone, rent, lease, sell, modify, decompile, 
+disassemble, otherwise reverse engineer, or transfer the licensed program,
+or any subset of the licensed program, except as provided for in this 
+agreement.  Any such unauthorized use shall result in immediate and 
+automatic termination of this license and may result in criminal and/or 
+civil prosecution. 
+
+6. All rights not expressly granted here are reserved by authors.
+
+7. There are 2 basic types of licenses issued for ETV LIBRARY, these are:
+
+   a.  A single computer USAGE license.  The user purchases ONE license 
+   to USE the ETV LIBRARY on ONE computer. 
+
+   b.  A SITE USAGE license.  The user purchases a single USAGE license, 
+   authorising the USE of ETV LIBRARY, by the purchaser, the purchaser's 
+   employees or acredited agents, on an unlimited number of computers 
+   at the same physical SITE location.  This SITE location would 
+   normally be defined as a single building, but could be considered 
+   to be a number of buildings within the same, general, geographical 
+   location, such as an industrial estate or small town. 
+
+8. Installing and using ETV LIBRARY signifies acceptance of these terms 
+and conditions of the license. 
+
+Thank you for using the Etv Library.
+
+Etv Library Home Site: http://www.etvsoft.com

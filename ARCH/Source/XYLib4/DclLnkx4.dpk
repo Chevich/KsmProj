@@ -1,0 +1,46 @@
+package DclLnkx4;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS OFF}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'X-library design-time'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+{$DEFINE Delphi3}
+{$DEFINE Delphi4}
+{$DEFINE Pro}
+
+requires
+  RtlLnkx4,
+  DclEOth4;
+
+contains
+  LnxRegs in '..\link4\LnxRegs.pas',
+  LnxProps in '..\link4\LnxProps.pas',
+  XLibRegs in 'XLibRegs.pas',
+  XExps in 'XExps.pas',
+  TFCProps in 'TFCProps.pas',
+  XLbProps in 'XLbProps.pas',
+  DLinksEd in 'DLinksEd.pas',
+  DSLnkSet in '..\link4\DSLnkSet.pas';
+
+end.

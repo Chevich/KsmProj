@@ -1,0 +1,39 @@
+//               оНКЪ ХГ   View STA.InvoiceV
+//NumInv          TStringField[8]      NumInv      8
+//SDate           TDateField           SDate       10
+//KodOrg          TIntegerField        KodOrg      10
+//ClientName      TStringField[40]     ClientName  40
+//Driver          TStringField[20]     Driver      20
+//TrustNum        TStringField[10]     TrustNum    10
+//TrustDate       TDateField           TrustDate   10
+//Trust           TStringField[40]     Trust       40
+//Prod            TIntegerField        Prod        10
+//ProdName        TStringField[40]     ProdName    40
+//UnitMName       TStringField[15]     UnitMName   15
+//Amount          TFloatField          Amount      10
+//TareName        TStringField[15]     TareName    15
+//Package         TSmallintField       Package     10
+//Price           TFloatField          Price       10
+//Summa           TFloatField          Summa       10
+//Massa           TFloatField          Massa       10
+
+#Default=InvoiceV
+#TDate=TrustDate
+#Unt=UnitMName
+#Packe=Package
+
+
+                                                                                 нрвер он нрцпсгйе опндсйжхх
+                                                                        юн "цпндмемяйхи йнлахмюр ярпнхрекэмшу люрепхюкнб"
+                                                                        <                                            A.Filter*>
+  оН ЯНЯРНЪМХЧ МЮ <            A.DateStr>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ╧  ДН-|  дюрю  |  йнд  |     мюхлемнбюмхе йкхемрю     |     т.х.н.    |╧ днбепемм|  дюрю  | т.х.н. кхжю, онксвхбьецн| йнд  |         мюхлемнбюмхе опндсйжхх           | ед. | йнкх-|   бхд рюпш    |й-бн|  жемю  |   ясллю   | люяяю |
+|ЙСЛЕМРЮ|бшохяйх |йкхемрю|                              |    бндхрекъ   |(днцнбнпю)| бшдювх | днбепеммнярэ (днцнбнп)  | опнд |                                          | хгл.|веярбн| цпсгнб. леярю |леяр|        |           |апср.йц|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//345678 01.05.98 123456  012345678901234567890123456789 012345678901234 0123456789 01.05.98 0123456789012345678901234 012345  0123456789012345678901234567890123456789  01234  0123  012345678901234  012 01234567 12345678901 0123456
+for InvoiceV
+<NumInv> < SDate> <KodOrg><        OrgName             > <   Driver    > <TrustNum> < TDate> <     Trust             > <Prod>  <          ProdName                    >  <Unt>Amount> <   TareName  >Pack>   Price>      Summa>  Massa>
+end;
+--------------------------------------------------------------------------------------------------------------
+    юн "цПНДМЕМЯЙХИ ЙНЛАХМЮР ЯРПНХРЕКЭМШУ ЛЮРЕПХЮКНБ"                   аЧПН хюо

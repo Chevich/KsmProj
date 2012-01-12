@@ -1,0 +1,816 @@
+19.11.05 18:43:13  User    
+
+
+
+
+<Etv>
+ Filter.dfm             
+ Filter.pas             
+
+<Other4>
+ ExpExcel.pas           
+
+<XYLib4>
+ BEForms.dfm            
+ BEForms.pas            
+
+24.11.05 11:03:16  Lev    
+
+
+
+
+<Etv>
+ Filter.dfm             
+
+<Other4>
+ ExpExcel.pas           
+
+<XYLib4>
+ XDBTFC.pas             
+ BEForms.pas            
+
+29.11.05 14:44:34  Lev    
+
+
+
+
+<XYLib4>
+ MBEForms.dfm           
+ BEForms.dfm            
+
+07.12.05 09:20:50  Lev    
+
+
+
+
+<Etv>
+ EtvLook.pas            
+
+<Link4>
+ LnTables.pas           
+ SrcIndex.pas           
+
+<Other4>
+ RtlEOth4.dpk           
+ misc.pas               
+ Misc.dfm               
+
+<XYLib4>
+ XSBForm.dfm            
+ XForms.pas             
+ FSetInq.dfm            
+ XTFC.pas               
+ TlsForm.dfm            
+ BEForms.dfm            
+ BBEForms.dfm           
+ ABEForms.dfm           
+ BEForms.pas            
+ RtlLnkx4.dpk           
+ MBEForms.dfm           
+ DclLnkx4.dpk           
+
+07.12.05 09:21:15  Lev    
+
+
+
+
+<Other4>
+ MthRound.pas           <deleted>
+
+08.12.05 13:56:43  Lev    
+
+
+
+
+<Etv>
+ EtvRXCtl.pas           
+
+<Other4>
+ misc.pas               
+
+09.12.05 14:44:30  Lev    
+
+
+
+
+<Other4>
+ misc.pas               
+
+<XYLib4>
+ BEForms.pas            
+ MBEForms.dfm           
+ XDBForms.pas           
+ ABEForms.dfm           
+ BBEForms.dfm           
+ BEForms.dfm            
+
+13.12.05 08:54:21  Lev    
+
+
+
+
+<XYLib4>
+ BEForms.pas            
+ MBEForms.dfm           
+ BEForms.dfm            
+ ABEForms.dfm           
+ BBEForms.dfm           
+
+15.12.05 10:01:47  Lev    
+
+
+
+
+<XYLib4>
+ MBEForms.dfm           
+ BEForms.pas            
+ BEForms.dfm            
+
+15.12.05 14:20:53  Lev    
+
+
+
+
+<Other4>
+ misc.pas               
+
+<XYLib4>
+ XTFC.pas               
+ BEForms.pas            
+ BBEForms.dfm           
+
+15.12.05 20:36:59  Lev    
+
+
+
+
+<XYLib4>
+ XForms.pas             
+ BEForms.pas            
+ BEForms.dfm            
+
+20.12.05 12:06:46  bausha    
+
+
+
+
+<Etv>
+ RtlEtv4.dpk            
+ DclEtv4.dpk            
+
+<Other4>
+ RtlEOth4.dpk           
+ DclEOth4.dpk           
+
+<XYLib4>
+ RtlLnkx4.dpk           
+ DclLnkx4.dpk           
+
+26.12.05 13:46:58  Lev    
+
+
+
+
+<Etv>
+ fBase.dfm              
+ DclEtv4.dpk            
+ RtlEtv4.dpk            
+ etvforms.pas           
+ EtvGrid.pas            
+
+<Other4>
+ RtlEOth4.dpk           
+ DclEOth4.dpk           
+ misc.pas               
+
+<XYLib4>
+ DclLnkx4.dpk           
+ XForms.pas             
+ RtlLnkx4.dpk           
+
+11.04.06 09:52:44  Lev    
+
+
+
+
+<Etv>
+ EtvDBFun.pas           
+ EtvLook.pas            
+
+<Other4>
+ misc.pas               
+
+04.05.06 14:41:11  Lev    
+
+
+
+
+<Etv>
+ EtvLook.pas            
+
+<XYLib4>
+ XTFC.pas               
+ BEForms.dfm            
+
+19.06.06 15:47:31  Lev    
+
+
+
+
+<Etv>
+ EtvLook.pas            
+
+<Link4>
+ LnTables.pas           
+
+<XYLib4>
+ XDBTFC.pas             
+ XSBForm.dfm            
+ MBEForms.dfm           
+ BBEForms.dfm           
+ BEForms.dfm            
+
+19.06.06 15:47:43  Lev    
+
+
+
+
+<XYLib4>
+ ABEForms.dfm           
+ XCtrls.pas             
+ XSBForm.pas            
+
+26.06.06 10:23:24  Lev    
+
+
+
+
+<Etv>
+ Etvbor.pas             
+
+<Other4>
+ ExpExcel.pas           
+
+<XYLib4>
+ XSBForm.pas            
+ XSBForm.dfm            
+
+26.06.06 15:00:02  Lev    
+
+
+
+
+<Etv>
+ EtvFilt.pas            
+
+<XYLib4>
+ XDBTFC.pas             
+
+08.12.06 14:10:38  bausha    
+
+
+
+
+<Etv>
+ EtvFilt.pas            
+ EtvPopup.pas           
+ EtvDBFun.pas           
+ EtvClone.pas           
+ EtvConst.pas           
+
+<XYLib4>
+ DclLnkx4.dpk           
+
+21.12.06 13:04:51  Lev    
+
+
+
+
+<Etv>
+ Etvreg.pas             
+ RtlEtv4.dpk            
+ EtvFilt.pas            
+ DclEtv4.dpk            
+ EtvExp.pas             
+ Filter.pas             
+ EtvLook.pas            
+
+<Link4>
+ LnkSet.pas             
+ LnkMisc.pas            
+
+<Other4>
+ DclEOth4.dpk           
+
+<XYLib4>
+ XECtrls.pas            
+ DclLnkx4.dpk           
+
+04.01.07 10:35:34  Lev    
+
+
+
+
+<XYLib4>
+ XECtrls.pas            
+
+26.02.07 12:01:55  Lev    
+
+
+
+
+<Link4>
+ LnkSet.pas             
+
+<Other4>
+ misc.pas               
+ ExpExcel.pas           
+
+<XYLib4>
+ XECtrls.pas            
+
+26.02.07 12:07:58  Lev    
+
+
+
+
+<Etv>
+ EtvContr.pas           
+ EtvDBFun.pas           
+
+<Other4>
+ XTxtPrn.pas            
+
+11.05.07 15:07:17  Lev    
+
+
+
+
+<Etv>
+ EtvDBase.pas           
+ EtvDsSt.pas            
+ EtvClone.pas           
+ DiDual.dfm             
+ DiDual.pas             
+ EtvSort.pas            
+ EtvTable.pas           
+ EtvShb.pas             
+ EtvFind.pas            
+ EtvPopup.pas           
+ EtvDBFun.pas           
+ EtvFilt.pas            
+ EtvLook.pas            
+ DclEtv4.dpk            
+
+<Link4>
+ LnkIFNs.pas            
+ LnkMisc.pas            
+ XApps.pas              
+ FindDlgc.pas           
+ SrcIndex.pas           
+ DSLnkSet.pas           
+ LnkSet.pas             
+ LnTables.pas           
+
+<Other4>
+ Nav.pas                
+ XDBMisc.pas            
+ DclEOth4.dpk           
+ ExpExcel.pas           
+ misc.pas               
+
+<XYLib4>
+ FSetInq.pas            
+ RtlLnkx4.dpk           
+ TlsForm.dfm            
+ XDBForms.pas           
+ BEForms.dfm            
+ BEForms.pas            
+ DclLnkx4.dpk           
+ XDBTFC.pas             
+ XTools.pas             
+ XECtrls.pas            
+ TlsForm.pas            
+ XSBForm.dfm            
+ XSBForm.pas            
+ XTFC.pas               
+
+03.10.07 16:55:39  lev    
+
+
+
+
+<Etv>
+ EtvRus.pas             
+ EtvPages.pas           
+ Filter.dfm             
+ Filter.pas             
+
+<Link4>
+ LnkMisc.pas            
+ LnkSet.pas             
+
+<Other4>
+ ExpExcel.pas           
+
+<XYLib4>
+ XDBTFC.pas             
+ BEForms.dfm            
+ BEForms.pas            
+ XSBForm.dfm            
+
+17.03.08 13:49:57  lev    
+
+
+
+
+<Etv>
+ EtvGrid.pas            
+
+<Other4>
+ XPDlg.dfm              
+ XPDlg.pas              
+ ExpExcel.pas           
+
+<XYLib4>
+ XEFIelds.pas           
+
+17.03.08 15:02:28  lev    
+
+
+
+
+<Other4>
+ ExpExcel.pas           
+
+18.03.08 14:04:52  bausha    
+
+
+
+
+<Other4>
+ ExpExcel.pas           
+
+26.03.08 10:30:10  lev    
+
+
+
+
+<XYLib4>
+ TlsForm.pas            
+ XDBTFC.pas             
+
+31.10.08 09:27:29  lev    
+
+
+
+
+<Etv>
+ EtvTemp.pas            
+
+<Link4>
+ LnkMisc.pas            
+
+<Other4>
+ ExpExcel.pas           
+ XDBMisc.pas            
+ misc.pas               
+
+<XYLib4>
+ XSBForm.dfm            
+ XTFC.pas               
+ XSBForm.pas            
+ XDBForms.pas           
+ BEForms.dfm            
+ XForms.pas             
+ XDBTFC.pas             
+
+01.04.09 12:38:42  lev    
+
+
+
+
+<Etv>
+ RtlEtv4.dpk            
+ Filter.pas             
+ EtvLook.pas            
+
+<Link4>
+ LnkSet.pas             
+ LnkMisc.pas            
+
+<Other4>
+ XTxtPrn.pas            
+ ExpExcel.pas           
+
+<XYLib4>
+ BEForms.pas            
+
+09.07.09 09:51:53  Lev    
+
+
+
+
+<Etv>
+ EtvRus.pas             
+
+09.07.09 09:52:07  Lev    
+
+
+
+
+<Etv>
+ EtvList.pas            
+ RtlEtv5.dpk            
+ DclEtv5.dpk            
+ EtvConst.pas           
+
+<Other4>
+ RtlEOth4.dpk           
+ XDBMisc.pas            
+
+<XYLib4>
+ DclLnkx4.dpk           
+ XETrees.pas            
+ XECtrls.pas            
+ XAbout.dfm             
+ RtlLnkx4.dpk           
+
+23.09.09 10:48:15  Lev    
+
+
+
+
+<Link4>
+ LnTables.pas           
+
+<Other4>
+ XDBMisc.pas            
+ ExpExcel.pas           
+
+<XYLib4>
+ XDBTFC.pas             
+ XECtrls.pas            
+ BEForms.dfm            
+ BEForms.pas            
+
+29.09.09 08:46:32  Lev    
+
+
+
+
+<Link4>
+ LnkMisc.pas            
+
+<Other4>
+ ExpExcel.pas           
+
+<XYLib4>
+ TlsForm.pas            
+ XDBTFC.pas             
+ FSetInq.dfm            
+ FSetInq.pas            
+
+30.10.09 12:38:54  Lev    
+
+
+
+
+<Link4>
+ LnTables.pas           
+ LnkMisc.pas            
+
+<XYLib4>
+ XDBTFC.pas             
+ XECtrls.pas            
+ BEForms.pas            
+ TlsForm.pas            
+
+11.11.09 16:53:32  Lev    
+
+
+
+
+<Other4>
+ misc.pas               
+
+<XYLib4>
+ XTFC.pas               
+ XSBForm.dfm            
+ XDBTFC.pas             
+
+13.01.10 13:55:22  Lev    
+
+
+
+
+<Etv>
+ EtvFilt.pas            
+
+<Link4>
+ LnTables.pas           
+ LnkMisc.pas            
+
+<Other4>
+ XDBMisc.pas            
+
+<XYLib4>
+ XDBTFC.pas             
+ TlsForm.pas            
+ TlsForm.dfm            
+
+04.02.10 09:20:25  Lev    
+
+
+
+
+<Etv>
+ EtvLook.pas            
+
+16.02.10 15:34:43  Lev    
+
+
+
+
+<Etv>
+ EtvGrid.pas            
+
+<XYLib4>
+ XECtrls.pas            
+
+16.02.10 15:34:53  Lev    
+
+
+
+
+<Etv>
+ EtvPas.pas             
+
+18.03.10 13:09:48  Lev    
+
+
+
+
+<Etv>
+ EtvPas.pas             
+ EtvGrid.pas            
+
+<Other4>
+ misc.pas               
+
+29.04.10 10:06:42  Lev    
+
+
+
+
+<Etv>
+ EtvTable.pas           
+ EtvRxCtl.pas           
+ EtvGrid.pas            
+ EtvList.pas            
+
+<Link4>
+ LnTables.pas           
+
+<Other4>
+ Nav.pas                
+ XDBMisc.pas            
+
+<XYLib4>
+ XECtrls.pas            
+ BEForms.pas            
+ BEForms.dfm            
+ XTFC.pas               
+ XDBTFC.pas             
+
+29.04.10 13:52:19  Lev    
+
+
+
+
+<Other4>
+ XDBMisc.pas            
+
+03.05.10 17:45:29  Lev    
+
+
+
+
+<Other4>
+ XDBMisc.pas            
+
+<XYLib4>
+ XECtrls.pas            
+
+02.06.10 14:57:02  Lev    
+
+
+
+
+<Etv>
+ EtvGrid.pas            
+
+<XYLib4>
+ XECtrls.pas            
+
+11.11.10 13:23:51  Lev    
+
+
+
+
+<Link4>
+ LnkMisc.pas            
+
+<XYLib4>
+ XDBTFC.pas             
+ BEForms.pas            
+ BEForms.dfm            
+
+15.11.10 11:34:03  Lev    
+
+
+
+
+<Link4>
+ LnkMisc.pas            
+
+28.12.10 16:04:15  Lev    
+
+
+
+
+<Link4>
+ XApps.pas              
+
+25.01.11 10:27:25  Lev    
+
+
+
+
+<Etv>
+ ReadmeRu.txt           
+ EtvGrid.pas            
+ EtvConst.pas           
+
+<Other4>
+ XDBMisc.pas            
+
+<XYLib4>
+ BEForms.dfm            
+
+10.02.11 10:05:00  Lev    
+
+
+
+
+<Etv>
+ EtvGrid.pas            
+
+<Other4>
+ XDBMisc.pas            
+
+<XYLib4>
+ BEForms.dfm            
+
+22.06.11 15:00:42  Lev    
+
+
+
+
+<Link4>
+ LnTables.pas           
+
+<Other4>
+ ExpExcel.pas           
+
+<XYLib4>
+ BEForms.dfm            
+
+06.07.11 09:46:08  Lev    
+
+
+
+
+<Link4>
+ XApps.pas              
+ LnkSet.pas             
+
+10.01.12 15:57:14  Lev    
+
+
+
+
+<Other4>
+ Misc.pas               
+ ExpExcel.pas           
+
+<XYLib4>
+ TlsForm.pas            
+ Splash.pas             
+ Splash.dfm             
+ XSplash.pas            
+ XDBTFC.pas             
+ BEForms.dfm            
+ XTFC.pas               
+ XSBForm.dfm            
+

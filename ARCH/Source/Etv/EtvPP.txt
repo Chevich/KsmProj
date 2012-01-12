@@ -1,0 +1,2 @@
+  Representation save lookup values in ReportBuilder.
+Install package EtvPP in Delphi3 or EtvPP4 in Delphi4.

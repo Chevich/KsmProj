@@ -1,0 +1,52 @@
+unit JobHiProtocol;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ABEForms, StdCtrls, SrcIndex, XDBForms, DBCtrls, ExtCtrls, Grids,
+  DBGrids, EtvGrid, XECtrls, ComCtrls, EtvPages, Mask, EtvContr, EtvLook,
+  ToolEdit, RXDBCtrl, EtvRXCtl, RXCtrls, XCtrls, EtvRich, EtvList, DBCGrids;
+
+type
+  TFormJobHiProtocol = class(TABEForm)
+    EditID: TXEDBEdit;
+    XLabel1: TXLabel;
+    EditDateOn: TXEDBDateEdit;
+    XLabel2: TXLabel;
+    EditTConferenceName: TXEDBLookupCombo;
+    XLabel3: TXLabel;
+    XLabel8: TXLabel;
+    EditNote: TEtvDBRichEdit;
+    Grid1: TXEDbGrid;
+    XLabel9: TXLabel;
+    DBCtrlGrid1: TDBCtrlGrid;
+    XEDBEdit1: TXEDBEdit;
+    XLabel11: TXLabel;
+    XLabel12: TXLabel;
+    XEDBDateEdit3: TXEDBDateEdit;
+    XLabel13: TXLabel;
+    XEDBCombo2: TXEDBCombo;
+    XLabel14: TXLabel;
+    DBMemo1: TDBMemo;
+    DBMemo2: TDBMemo;
+    XLabel15: TXLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormJobHi: TFormJobHi;
+
+implementation
+  uses XMisc;
+
+{$R *.DFM}
+Initialization
+  RegisterAliasXForm('FormJobHi', TFormJobHi);
+Finalization
+  UnRegisterXForm(TFormJobHi);
+end.
+   

@@ -1,0 +1,141 @@
+[Compiler]
+A=1
+B=0
+C=1
+D=1
+E=0
+F=0
+G=1
+H=1
+I=1
+J=1
+K=0
+L=1
+M=0
+N=1
+O=1
+P=1
+Q=0
+R=0
+S=0
+T=0
+U=0
+V=1
+W=0
+X=1
+Y=0
+Z=1
+ShowHints=0
+ShowWarnings=0
+UnitAliases=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+[Linker]
+MapFile=0
+OutputObjs=0
+ConsoleApp=1
+DebugInfo=0
+RemoteSymbols=0
+MinStackSize=16384
+MaxStackSize=1048576
+ImageBase=4194304
+ExeDescription=
+[Directories]
+OutputDir=P:\
+UnitOutputDir=
+PackageDLLOutputDir=
+PackageDCPOutputDir=
+SearchPath=p:\;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl;p:\Auto
+Packages=VCLX40;VCL40;VCLDB40;VCLDBX40;VCLSMP40;RxCtl4;RxDB4;rbBDE44;rbRCL44;rbIDE44
+Conditionals=Delphi3;Delphi4;Pro
+DebugSourceDirs=p:\;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl;p:\Auto
+UsePackages=1
+[Parameters]
+RunParams=-u -AliasName=gksm
+HostApplication=
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+[Excluded Packages]
+$(DELPHI)\Bin\dclmid40.bpl=Borland MIDAS Components
+$(DELPHI)\Bin\dclint40.bpl=Borland Resource DLL Wizard
+$(DELPHI)\Bin\dclocx40.bpl=Borland Sample Imported ActiveX Controls
+[HistoryLists\hlDebugSourcePath]
+Count=5
+Item0=p:\;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl;p:\Auto
+Item1=p:\;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl
+Item2=p:\;d:\b\MsDebug\MsLib;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl
+Item3=p:\;c:\b\MsDebug\MsLib;c:\b\etv;c:\b\other4;c:\b\link4;c:\b\xylib4;$(DELPHI)\source\vcl
+Item4=p:\;c:\b\MsDebug\MsLib;c:\b\etv;c:\b\other4;c:\b\link4;c:\b\xylib4;d:\b\borland\delphi4\source\vcl
+[HistoryLists\hlConditionals]
+Count=1
+Item0=Delphi3;Delphi4;Pro
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+[HistoryLists\hlSearchPath]
+Count=5
+Item0=p:\;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl;p:\Auto
+Item1=p:\;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl
+Item2=p:\;d:\b\MsDebug\MsLib;d:\b\etv;d:\b\other4;d:\b\link4;d:\b\xylib4;$(DELPHI)\source\vcl
+Item3=p:\;c:\b\MsDebug\MsLib;c:\b\etv;c:\b\other4;c:\b\link4;c:\b\xylib4;$(DELPHI)\source\vcl
+Item4=p:\;c:\b\MsDebug\MsLib;c:\b\etv;c:\b\other4;c:\b\link4;c:\b\xylib4
+[HistoryLists\hlUnitOutputDirectory]
+Count=1
+Item0=P:\BAUSHA
+[HistoryLists\hlOutputDirectorry]
+Count=2
+Item0=P:\
+Item1=P:\BAUSHA
+[HistoryLists\hlRunParameters]
+Count=30
+Item0=-u -AliasName=gksm
+Item1=-u -AliasName=gksm -DirShb=D:\B\SHB
+Item2=-u -AliasName=gksm -DirShb=D:\B\SHB -Optimize
+Item3=-u -AliasName=gksm -DirShb=D:\B\SHB -Optimize -MessageInOptimiz
+Item4=-u -AliasName=gksm -DirShb=D:\B\SHB -Optimize -MessageInOptimize
+Item5=-p -AliasName=gksm -DirShb=D:\B\SHB
+Item6=-p -AliasName=gksm
+Item7=-uShop -AliasName=gksm
+Item8=-u"Shop" -p"Shopper" -AliasName=gksm
+Item9=-uShop -passwordShopper -AliasName=gksm
+Item10=-uShop -pShopper -AliasName=gksm
+Item11=-uLev -AliasName=gksm
+Item12=-pBausha -AliasName=gksm
+Item13=-u"Беляева Г.Н." -AliasName=gksm
+Item14=-uБеляева%20Г.Н. -AliasName=gksm
+Item15=-uLev -AliasName=gksm -DirShb=D:\B\Shb
+Item16=-uMIH -pmih -AliasName=gksm -DirShb=D:\B\Shb
+Item17=-uMIH -AliasName=gksm -DirShb=D:\B\Shb
+Item18=-uLev -AliasName=gksm -DirShb=P:\Shb
+Item19=-uLev -AliasName=locgksm -DirShb=P:\Shb
+Item20=-p -uLev -AliasName=gksm
+Item21=-p -uLev -AliasName=gksmnew
+Item22=-uLev -AliasName=gksmnew
+Item23=-u -uLev -AliasName=gksm
+Item24=-u -AliasName=gksm9 -Optimiz
+Item25=-u -AliasName=gksm -Optimiz
+Item26=-p -AliasName=gksm -Optimiz
+Item27=-AliasName=gksm -Optimiz
+Item28=-AliasName=locgksm -Optimiz
+Item29=-AliasName=gksm -Optimize

@@ -1,0 +1,3 @@
+  Use of T[DB]DateEdit from RX inside Etv library.
+Install package EtvRX in Delphi3 or EtvRx4 in Delphi4. 
+Attach unit EtvRXAdd to your project.

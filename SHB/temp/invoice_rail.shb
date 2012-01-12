@@ -1,0 +1,118 @@
+//  Шаблон накладной
+#Default=Invoice
+#SenderINN=SenderName,INN
+#SenderOKPO=SenderName,OKPO
+#SenderLic=SenderName,Licence
+#ClientLic=OrgName,Licence
+#PayerLic=PayerName,Licence
+#p=InvoiceProd
+#unit=InvoiceProd.ProdName,UnitMName
+#Tare=InvoiceProd.TareName,TareName
+#TrPr=InvoiceProd.TareProd
+#GoalPurchaseName=Invoice.ContractName,GoalPurchaseName
+#Pck=InvoiceProd.Package
+#Cls=InvoiceProd.ClassCargo
+//#M=InvoiceProd.Weight
+#Prod=InvoiceProd.Prod
+//#Cr=InvoiceProd.TPriceName,CurrencyName
+//#CurrencyNameDop=InvoiceProd.TPriceName,NameDop
+//#CurrencyNameDop=InvoiceProdProcess.NameDop
+//#CurrencyNameDop=B.CurrencyNameDop
+#Obj=InvoiceProd.Object
+#Allow=AllowerName,Name
+// Замены для перемнных НДС
+#Rate=InvoiceProd.RateVATCalc
+#SummaWVAT=InvoiceProd.SummaWVAT
+#SummaVAT=InvoiceProd.SummaVAT
+#Ext=InvoiceProd.Extra
+#TransDate=TransportDate
+#BMass=B.Massa
+#BAmn=B.Amount
+
+
+if PrintInit then
+  <A.PrintSetUp                           >
+end;
+// Установка шрифта "Пайка" для печати кодов УНН,ОКПО
+if UserQuery then
+                                -1|    Отправитель   |   Получатель    |-0
+                      Коды УНН  |  < SenderINN  >  | < OrgName,INN > |
+                      Коды ОКЮЛП|  < SenderOKPO >  | < OrgName,OKPO> |
+                      Лизензия №|  < SenderLic  >  | < ClientLic   > |
+                                   --------------------------------------
+                                  ТОВАРНАЯ НАКЛАДНАЯ № <Kod     >
+else
+
+//                              |     Отправитель     |   Получатель    |
+                         < SenderINN  >< OrgName,INN >
+
+                         < SenderOKPO >< OrgName,OKPO>
+
+                         < SenderLic  >< ClientLic   >
+end;
+
+
+
+
+
+     < B.CountryProd                                   >
+if PrintSetUp then
+  <A.PrintSetUp                                          >
+end;
+<         B.sDate>
+
+Вид перевозки <B.TTransport        >  <B.IsBarter   >
+                                                                                                                                -----------------
+Отправитель      < B.SenderName+                                                                                               > |SenderName,Kod>|
+                < +B.SenderName                                                                                               > |---------------|
+Получатель       < B.Payer+                                                                                                    > |B.PayerKod    >|
+                < +B.Payer                                                                                                    > -----------------
+Пункт погрузки  <  DepotName,Name               > Пункт разгрузки < B.PointUnloading+                                         > |B.ClientKod   >|
+                                                                   < +B.PointUnloading                                        > -----------------
+Основание : < B.LabContr                                                                  >
+Условие поставки: < p.TPriceName,Name                             > < B.AutoName  > < Transport         >  < B.WayPaper  > <WayPaper              >
+Цель приобретения : < GoalPurchaseName                                                    >
+====================================================================================================================================================
+ С В Е Д Е Н И Я   О   Т О В А Р Е    цены на продукцию завода изготовителя - ОАО "Гродненский КСМ", прейскурант №< p.DatePriceNum,NumPrice     >
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ Код |  Наименование продукции,   |Класс|Единица|Кол-во| Цена   |Над-| Стоимость |Став- |   Сумма  |   Всего с  | Вид упаковки |К-во |К-во  | Масса  |
+ про-|  товара (с указанием сорта,|проч-| изме- |про-  | ед.    |    |           | ка   |    НДС   |    НДС     |   грузового  |      прод. | брутто |
+ дук-|  размера,артикула,прейску- |ности| рения |дукции| изго-  |бав-|           |НДС % |          |            |     места    |груз.|в 1   |   кг   |
+ ции |  ранта и т.д.)             |     |       |      | товит. |ка% |     <B.CurrencyNameDop          >        |              |мест |месте |        |
+-----+----------------------------+-----+-------+------+--------+----+-----------+-----------------+------------+--------------+-----+------+---------
+  1  |            2               |  3  |   4   |  5   |   6    |  7 |     8     |  9   |    10    |     11     |      12      | 13  |  14  |   15   |
+------------------------------------------------------------------------------------------------------------------------------------------------------E
+While InvoiceProd_ do begin
+  if InvoiceProdLabel
+Prod> | <p.ProdName,Name+        >| Cls>| <Unit>| BAmn>|B.Price>|Ext>|SummaWVAT> |Rate> | SummaVAT>|    p.Summa>|<Tare+       >| Pck>|<TrPr>| BMass> |
+      | <+p.ProdName,Name        >|     |       |      |        |    |           |      |          |            |<+Tare       >|     |      |        |
+  end
+SUM
+------------------------------------------------------------------------------------------------------------------------------------------------------
+      | Итого                     |     |       |BAmn> |        |    |SummaWVAT> |      | SummaVAT>|    p.Summa>|              | Pck>|      | BMass> |F
+------------------------------------------------------------------------------------------------------------------------------------------------------
+END
+if RailTarif then
+46002 | Железнодорожный тариф     |     | руб   |      |        |    |           |      |          |            |              |     |      |        |
+------------------------------------------------------------------------------------------------------------------------------------------------------
+end;
+Сумма НДС : <SummaVATName                                                                                                                         >
+Всего отпущено на сумму с НДС : <SummaName                                                                                                        >
+Всего:< B.AmountName                                          >
+Указанный товар за исправной пломбой, К-во мест <TareAmount   >
+тарой и упаковкой < TareName                                  >
+Груз массой брутто, <B.MassaNameAdd+                          >
+<+B.MassaNameAdd                                              >
+С товаром переданы документы: < B.AutoName  > < Transport     >
+Отпуск разрешил диспетчер  <DispatcherName,Name               >
+Отпуск произвел мастер  < StockmanName,Name                   >
+Товар получил ______________________________________________
+Указанный товар сдал _______________________________________
+Принятое кол-во и стоимость товара _________________________
+Принял _____________________________________________________
+
+Штамп отправителя                      Отв. <Allow            >
+
+if IsTare then begin
+<B.TareMessage                                                           >
+end;

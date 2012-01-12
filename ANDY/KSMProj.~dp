@@ -1,0 +1,91 @@
+Program KSMProj;
+
+Uses
+  {VCLDB40;VCLDBX40;}
+  {MsCheck,}
+  Splash,
+  Forms,
+  TlsForm,
+  SaErrors,
+  MdBase in '..\MdBase.pas' {ModuleBase: TDataModule},
+  XSBForm in 'd:\b\XYLIB4\XSBForm.pas' {XSDBForm},
+  SForm in '..\SForm.pas' {FormStart},
+  MdGeography in '..\Geography\MdGeography.pas' {ModuleGeography: TDataModule},
+  MdCommon in '..\Common\MdCommon.pas' {ModuleCommon: TDataModule},
+  MdWorkers in '..\Workers\MdWorkers.pas' {ModuleWorkers: TDataModule},
+  MdProd in '..\Product\MdProd.pas' {ModuleProc: TDataModule},
+  MdOrgs in '..\Orgs\MdOrgs.pas' {ModuleOrgs: TDataModule},
+  MdContr in '..\Contract\MdContr.pas' {ModuleContract: TDataModule},
+  MdPays in '..\Pays\MdPays.pas' {ModulePays: TDataModule},
+  MdInvc in '..\Invoice\MdInvc.pas' {ModuleInvoice: TDataModule},
+  MdClientsAdd in '..\Orgs\MdClientsAdd.pas' {ModuleClientsAdc: TDataModule},
+  MdShop in '..\Shop\MdShop.pas' {ModuleShop: TDataModule},
+  ABEForms in 'd:\b\XYLib4\ABEForms.pas' {ABEForm},
+  BEForms in 'd:\b\XYLib4\BEForms.pas' {BEForm},
+  BBEForms in 'd:\b\XYLib4\BBEForms.pas' {BBEForm},
+  MBEForms in 'd:\b\XYLib4\MBEForms.pas' {MBEForm},
+  Bank in '..\Common\Bank.pas' {FormBank},
+  Prod in '..\Product\Prod.pas' {FormProd},
+  ProdMat in '..\Product\ProdMat.pas' {FormProdMat},
+  ProdPlan in '..\Product\ProdPlan.pas' {FormProdPlan},
+  Tare in '..\Product\Tare.pas' {FormTare},
+  Orgs in '..\Orgs\Orgs.Pas' {FormOrgs},
+  ContrProd in '..\Contract\ContrProd.pas' {FormContractProd},
+  Contract in '..\Contract\Contract.pas' {FormContract},
+  Invoice in '..\Invoice\Invoice.pas' {FormInvoice},
+  PayDoc in '..\Pays\PayDoc.pas' {FormPayDoc},
+  PriceDlg in '..\Product\PriceDlg.pas' {FormPriceDlg},
+  DiDate in 'd:\b\Etv\DiDate.pas' {DialDate},
+  DlgOneDate in '..\DlgOneDate.pas' {DialogOneDate},
+  DlgClient in '..\DlgClient.pas' {DlgClientF},
+  DlgUnLOck in '..\Invoice\DlgUnLock.pas' {FormDlgUnLock},
+  DlgAct in '..\DlgAct.pas' {DialParamPayDoc},
+  Shop in '..\Shop\Shop.Pas' {FormShop},
+  SelectBox in '..\Materials\SelectBox.pas' {FormSelect},
+  Workers in '..\Workers\Workers.pas' {FormWorkers},
+  Person in '..\Workers\Person.pas' {FormPerson},
+  Person2 in '..\Workers\Person2.Pas' {FormPerson2},
+  FactureVAT in '..\Invoice\FactureVAT.pas' {FormFactureVAT},
+  Materials in '..\Materials\Materials.pas' {FormMat},
+  mdMaterials in '..\Materials\mdMaterials.pas' {mdMat: TDataModule},
+  MInvoiceCheckSS in '..\Materials\MInvoiceCheckSS.pas' {FMInvoiceCheckSS},
+  MInvoiceDragInfo in '..\Materials\MInvoiceDragInfo.pas' {FMInvoiceDragInfo},
+  MInvoice in '..\Materials\MInvoice.Pas' {MInvoiceForm},
+  MServiceUnit in '..\Materials\MServiceUnit.pas' {MServiceForm},
+  MFaktura in '..\Materials\MFaktura.pas' {MFakturaForm},
+  Facture in '..\Invoice\Facture.pas' {FormFacture},
+  JobHiProtocol in '..\Workers\JobHiProtocol.Pas' {FormJobHiProtocol},
+  UnForming1 in '..\Product\UnForming1.Pas' {FormUnForming1},
+  UnForming3 in '..\Product\UnForming3.Pas' {FormUnForming3};
+
+{$R *.RES}
+begin
+  try
+    Application.Initialize;
+    Application.Title := 'Реализация';
+    Application.CreateForm(TModuleBase, ModuleBase);
+  Application.CreateForm(TModuleGeography, ModuleGeography);
+  Application.CreateForm(TModuleCommon, ModuleCommon);
+  Application.CreateForm(TModuleWorkers, ModuleWorkers);
+  Application.CreateForm(TModuleProd, ModuleProd);
+  Application.CreateForm(TModuleOrgs, ModuleOrgs);
+  Application.CreateForm(TModuleContract, ModuleContract);
+  Application.CreateForm(TModulePays, ModulePays);
+  Application.CreateForm(TModuleInvoice, ModuleInvoice);
+  Application.CreateForm(TModuleClientsAdd, ModuleClientsAdd);
+  Application.CreateForm(TModuleShop, ModuleShop);
+  Application.CreateForm(TmdMat, mdMat);
+  Application.CreateForm(TFormStart, FormStart);
+  Application.CreateForm(TDialAct, DialAct);
+  Application.CreateForm(TFormPerson2, FormPerson2);
+  Application.CreateForm(TFormJobHiProtocol, FormJobHiProtocol);
+  Application.CreateForm(TFormUnForming1, FormUnForming1);
+  Application.CreateForm(TFormUnForming3, FormUnForming3);
+  Application.OnException:=SaErr.HandleDBExcept;
+    { Чтобы нормально работала функция Round при округлении чисел типа n.5 }
+    (*Set8087CW(Default8087CW or $0800);*)
+    { ******************************** }
+  except
+  end;
+  Application.Run;
+end.

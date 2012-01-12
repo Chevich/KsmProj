@@ -1,0 +1,34 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\CNT]
+
+[HKEY_CURRENT_USER\Software\CNT\Navitel Navigator.Saved]
+"ShowSafetyWarning"=dword:00000000
+"LegacyProtocolsConverted"=dword:00000001
+"VoicePack"="\\StorageCard\\NaviTel\\wav\\0419~Female (Tamara)"
+"Language"=dword:00000419
+"SystemScreenOrientation"=dword:00000000
+"SafeExit"=dword:00000000
+"RouteDemo"=dword:00000000
+"LogCOMPorts"=dword:00000000
+"Path"="\"\\StorageCard\\NaviTel\\Navitel.exe\""
+"MapAngle"=dword:00000000
+"MapXc"=dword:00000000
+"MapYc"=dword:00000000
+"MapZoom"=dword:0000000a
+
+[HKEY_CURRENT_USER\Software\CNT\Navitel Navigator]
+"RouteDemo"=dword:00000000
+"SafeExit"=dword:00000001
+"MapYc"=dword:00000000
+"MapXc"=dword:00000000
+"MapZoom"=dword:0000000a
+"MapAngle"=dword:00000000
+"Path"="\"\\StorageCard\\NaviTel\\Navitel.exe\""
+"LogCOMPorts"=dword:00000000
+"SystemScreenOrientation"=dword:00000000
+"Language"=dword:00000419
+"VoicePack"="\\StorageCard\\NaviTel\\wav\\0419~Female (Tamara)"
+"LegacyProtocolsConverted"=dword:00000001
+"ShowSafetyWarning"=dword:00000000
+

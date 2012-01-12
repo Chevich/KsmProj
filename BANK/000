@@ -1,0 +1,10 @@
+*.dfm
+*.pas
+*.bmp
+*.dof
+*.dsk
+*.drf
+*.res
+*.str
+*.dti
+*.cfg

@@ -1,0 +1,67 @@
+package RtlEtv5;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'EtvLibrary'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  VCLDB50,
+  VCLBDE50,
+  VCLMID50,
+  VCLSMP50;
+
+contains
+  Etvbor in 'Etvbor.pas',
+  EtvConst in 'EtvConst.pas',
+  EtvDB in 'EtvDB.pas',
+  EtvDBFun in 'EtvDBFun.pas',
+  EtvMem in 'EtvMem.pas',
+  EtvOther in 'EtvOther.pas',
+  Etvpas in 'Etvpas.pas',
+  EtvPopup in 'EtvPopup.pas',
+  DiAdv in 'DiAdv.pas' {DlgErrorAdv},
+  DiDual in 'didual.pas' {EtvDualListDlg},
+  EtvContr in 'EtvContr.pas',
+  EtvTable in 'EtvTable.pas',
+  EtvMidas in 'EtvMidas.pas',
+  EtvPrint in 'EtvPrint.pas',
+  DiPrint in 'DiPrint.pas' {DialPrint},
+  EtvList in 'EtvList.pas',
+  EtvLook in 'EtvLook.pas',
+  EtvGrid in 'EtvGrid.pas',
+  EtvClone in 'EtvClone.pas',
+  EtvFilt in 'EtvFilt.pas',
+  EtvFind in 'EtvFind.pas',
+  EtvSort in 'EtvSort.pas',
+  DiFind in 'DiFind.pas' {DialFind},
+  Filter in 'Filter.pas' {FormFilter},
+  EtvRich in 'EtvRich.pas',
+  DiPara in 'DiPara.pas' {DialParagraph},
+  DiReplace in 'DiReplace.pas' {DialReplace},
+  EtvPages in 'EtvPages.pas',
+  Etvforms in 'Etvforms.pas',
+  fBase in 'fBase.pas' {FormBase};
+
+end.

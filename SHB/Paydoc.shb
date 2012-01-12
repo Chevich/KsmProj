@@ -1,0 +1,93 @@
+//AutoInc            PayDocAutoInc                    TAutoIncField     №№  10
+//TDoc               PayDocTDoc                       TSmallintField    Тип документа  5
+//TDocName           PayDocTDocName                   TXELookField[45]  Тип документа  46  LOOKUP(TDoc,TDocLookup,Kod,Kod;Name)
+//NDoc               PayDocNDoc                       TIntegerField     Номер  6
+//StrictName         PayDocStrictName                 TXELookField[8]   Строгий код  9  LOOKUP(TDoc,TDocLookup,Kod,Strict)
+//DateDoc            PayDocDateDoc                    TDateField        Дата вып.  10
+//OrgD               PayDocOrgD                       TIntegerField     Организация в дебете  10
+//OrgDName           PayDocOrgDName                   TXELookField[48]  Плательщик  49  LOOKUP(OrgD,OrgLookup,Kod,Kod;Name)
+//MfoD               PayDocMfoD                       TStringField[9]   Банк дебт  9
+//BCountD            PayDocBCountD                    TStringField[20]  Б/счет дебитора  20
+//BCountDName        PayDocBCountDName                TXELookField[20]  BCountDName  20  LOOKUP(BCountD,OrgBankLookup,BCount,BCount)
+//BankNameD          PayDocBankNameD                  TXELookField[43]  Наименование банка плательщика  44  LOOKUP(MfoD,BankLookup,Kod,Name)
+//Summa              PayDocSumma                      TFloatField       Сумма  10
+//Currency           PayDocSCurrency                  TSmallintField    Код валюты  3
+//Course             PayDocSCourse                    TFloatField       Курс валюты  10
+//OrgK               PayDocOrgK                       TIntegerField     Организация в кредите  10
+//OrgKName           PayDocOrgKName                   TXELookField[48]  Организация в кредите платежа  49  LOOKUP(OrgK,OrgLookup,Kod,Kod;Name)
+//MfoK               PayDocMfoK                       TStringField[9]   Банк Кред  9
+//BCountK            PayDocBCountK                    TStringField[20]  Б/счет кредитора  20
+//BCountKName        PayDocBCountKName                TXELookField[20]  BCountKName  20  LOOKUP(BCountK,OrgBankLookup,BCount,BCount)
+//BankNameK          PayDocBankNameK                  TXELookField[43]  Наименование банка получателя  44  LOOKUP(MfoK,BankLookup,Kod,Name)
+//SummaName          PayDocSummaName                  TStringField[255] Сумма прописью  255  CALC
+//Penalty            PayDocPenalty                    TFloatField       % пени  10
+//DateGet            PayDocSDateGet                   TStringField[30]  Дата получения товара  30
+//TOper              PayDocTOper                      TSmallintField    Тип операции  5
+//TOperName          PayDocTOperName                  TXELookField[60]  Тип операции  61  LOOKUP(TOper,TOpLookup,Kod,Kod;Name)
+//Destination        PayDocDestination                TStringField[255] Назначение платежа  255
+//ImpPay             PayDocImpPay                     TSmallintField    Очередность платежа  2
+//ImpPayName         PayDocImpPayName                 TXELookField[30]  Очередность платежа  31  LOOKUP(ImpPay,ImpPayLookup,Kod,Kod;Name)
+//DatePay            PayDocDatePay                    TDateField        Банк отправ.  11
+//DateComing         PayDocDateComing                 TDateField        Банк получ.  11
+//PrPay              PayDocPrPay                      TXEListField      Пр.оплаты  20
+//SummaActive        PayDocSummaActive                TFloatField       Действующая сумма  17
+//AccountD           PayDocAccountD                   TStringField[5]   Дебет  5
+//AccountDName       PayDocAccountDName               TXELookField[6]   Дебет  7  LOOKUP(AccountD,AccountLookup,kod+'.'+subkod,kod+'.'+subkod)
+//AccountK           PayDocAccountK                   TStringField[5]   Кредит  5
+//AccountKName       PayDocAccountKName               TXELookField[6]   Кредит  7  LOOKUP(AccountK,AccountLookup,kod+'.'+subkod,kod+'.'+subkod)
+//ToOrg              PayDocToOrg                      TIntegerField     Организация-паразит  19
+//ToOrgName          PayDocToOrgName                  TXELookField[48]  Организация - паразит  49  LOOKUP(ToOrg,OrgLookup,Kod,Kod;Name)
+//Contract           PayDocContract                   TStringField[15]  № Контракта  15
+//Note               PayDocNote                       TStringField[50]
+#Default=PayDoc
+#Strict=TDocName,Strict
+#Debet=BCountD
+#DbPlace=BankNameD,PlaceName
+#Kredit=BCountK
+#KrPlace=BankNameK,PlaceName
+#Pen=Penalty
+#OpName=TOperName,Name
+#INND=OrgDName,INN
+#INNK=OrgKName,INN
+#ImpPayN=ImpPayName,Name
+  <A.PrintSetUp                                          >
+  ---------------------------------------------------------------------------------------
+  | Поступ. в банк плат. |   <B.Note                                                   >|
+  |-----------------------                     -------------            ----------------|
+  |         <                 TDocName,Name> N |   NumDoc> |            | < Strict     >|
+  |              <             B.DateDocStr>   -------------            ----------------|
+  |  Плательщик <OrgDName,FullName+                >        Дебет        Сумма          |
+  |     <+OrgDName,FullName                  > -----------------------------------------|
+  |     <+OrgDName,FullName                  > | <             Debet>|           Summa>=|
+  | УНН <INND     >                            |                     |                  |
+  | <BankNameD,Name                > -----------------               |                  |
+  | Банк плательщика в г. DbPlace  > | Код < MfoD  > |               |                  |
+  |                                  --------------------------------|                  |
+  | Получатель <B.FullNameK+                       >        Кредит   |                  |
+  | <+B.FullNameK                            > ----------------------+------------------|
+  | <+B.FullNameK                            > | <            Kredit>|                  |
+  | УНН <INNK     >                            |                     |                  |
+  | <BankNameK,Name                > --------------------------------+------------------|
+  | Банк получателя в г. < KrPlace > | Код < MfoK  > |               |                  |
+  |                                  --------------------------------+------------------|
+  | < SummaName+                                                   > |                  |
+  | < +SummaName                                                   > |------------------|
+  | < +SummaName                                   > (сумма прописью)| пеня за    дней  |
+  |------------------------------------------------------------------| из <Pen> % P     |
+  | Дата получения товара,услуг:<DateGet><DateGetText              > |------------------|
+  | Назначение платежа,наим.товара,вып.работ,ок.услуг,№№ и суммы док.| сумма с пеней    |
+  | < Destination+                                              >    |                  |
+  | < +Destination                                              > +--+------------------|
+  | < +Destination                                              > |Вид обр.|            |
+  | < +Destination                                              > |Вид оп. |   <TDoc >  |
+  |                                     Проведено банком          |Очер.пл.| <ImpPayN > |
+  |                                                               |Пр.ф з/п|            |
+  | --------                                                      |Назн.пл.|   <TOper>  |
+  | | М.П. |  Подписи                   Подписи банка             |Срок.пл.| <DatePay > |
+  | --------  клиента  _______________  ______________            +---------------------|
+  --------------------------------------------------------------------------------------+
+
+
+
+
+  ------------------------------------------------------------------------------------

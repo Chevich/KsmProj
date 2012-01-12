@@ -1,0 +1,86 @@
+//         Табличка ModuleProd.ProdSimple;
+//Kod        ProdSimpleKod:        TSmallintField    Код  5
+//KodUp      ProdSimpleKodUp:      TSmallintField    Код верхнего уровня  5
+//KodUpName  ProdSimpleKodUpName:  TEtvLookField[50] Верхний уровень  50  LOOKUP(KodUp,ProdLookup,Kod,Kod;Name)
+//Name       ProdSimpleName:       TStringField[40]  Наименование продукции  40
+//FullName   ProdSimpleFullName:   TStringField[70]  Полное наименование  70
+//TProd      ProdSimpleTProd:      TSmallintField    Тип продукции  10
+//GrProd     ProdSimpleGrProd:     TSmallintField    Группа продукции  10
+//UnitM      ProdSimpleUnitM:      TSmallintField    Ед.изм.  10
+//UnitMName  ProdSimpleUnitMName:  TEtvLookField[8]  Ед. изм.  8  LOOKUP(UnitM,UnitMLookup,Kod,Kod;Name)
+//SLength    ProdSimpleSLength:    TFloatField       Длина  5
+//Height     ProdSimpleHeight:     TSmallintField    Высота  10
+//Width      ProdSimpleWidth:      TFloatField       Ширина  6
+//Massa      ProdSimpleMassa:      TFloatField       Масса  5
+//Volume     ProdSimpleVolume:     TFloatField       Объем  10
+//Shop       ProdSimpleShop:       TSmallintField    Подразделение  10
+//ShopName   ProdSimpleShopName:   TEtvLookField[25] Подразделение  25  LOOKUP(Shop,ShopLookup,Kod,Kod;Name)
+//Standard   ProdSimpleStandard:   TStringField[30]  ГОСТ  30
+//AmountDown ProdSimpleAmountDown: TIntegerField     Узлов на уровень ниже  10
+
+//           Табличка ModuleBase.QueriesSimple (Запрос по ProdPrice)
+//Prod       QueriesSimpleProd        TIntegerField     Prod  10
+//ProdName   QueriesSimpleProdName    TStringField[40]  ProdName  40
+//UnitM      QueriesSimpleUnitM       TStringField[15]  UnitM  15
+//TPriceName QueriesSimpleTPriceName  TStringField[40]  TPriceName  40
+//TareName   QueriesSimpleTareName    TStringField[15]  TareName  15
+//SDate      QueriesSimpleSDate       TDateField        SDate  10
+//Price      QueriesSimplePrice       TFloatField       Price  10
+
+#Default=ProdPrice
+#Volume=Prod.Volume
+#Cr=ProdPrice.Currency
+#Uni=ProdPrice.UnitM
+#Len=Prod.SLength
+#Sqr=Prod.Square
+#Hgt=Prod.Height
+#Volume=Prod.Volume
+#Massa=Prod.Massa
+#Width=Prod.Width
+                                                                                                           "УТВЕРЖДАЮ"
+                                                                                                     Директор АО ГКСМ Л.А.Лучина
+                                                   СПРАВОЧНИК ЦЕН НА ПРОДУКЦИЮ                        "___"___________199_г.
+        <                                            A.Filter*>
+ По состоянию на <            A.DateStr> <                                                                           A.BranchName >
+ Цена за м.куб. :< A.PriceM3 >            Торговая надбавка : <A.Bid>%                                                   Лист №1
+-----------------------------------------------------------------------------------------------------------------------------------
+| КОД  |          НАИМЕНОВАНИЕ ПРОДУКЦИИ         |  ЕД.  | ОБЪЕМ  | МАССА  | ПЛО-  | ДЛИНА |ШИРИНА | ТОЛ- |  СВОБ.ОТ- |  ЦЕНА С   |
+|      |                                         |  ИЗМ. | М.КУБ. |        | ЩАДЬ  |       |ВЫСОТА | ЩИНА |  ПУС.ЦЕНА | ТОРГ.НАДБ.|
+-----------------------------------------------------------------------------------------------------------------------------------
+while Prod do begin
+  if AmountDownNotIsNull then
+//  if DrawLine then ( Новая ветка )
+//  end;
+// Prod.Kod>  <                                                                         Prod.FullName>
+// Средняя цена за м.куб : <   Price >  Торговая надбавка :<Bid>%
+  else
+//  if DrawLine then
+//-----------------------------------------------------------------------------------------------------------------------------------
+//  end;
+    while ProdPrice do begin
+|Prod> | <           ProdName                   >| <Uni> |Volume> | Massa> |  Sqr> |  Len> |Width> | Hgt> |  Price  > | PriceBid> |
+//    sum
+//---------------------------------------------------------------------------------------------------------------------------------
+      if EndList then begin
+// -- Разбиение на страницы
+-----------------------------------------------------------------------------------------------------------------------------------
+   АО "Гродненский комбинат строительных материалов"                                                                      Бюро ИАП
+Page
+
+                                                  СПРАВОЧНИК ЦЕН НА ПРОДУКЦИЮ
+        <                                            A.Filter*>
+ По состоянию на <            A.DateStr>   <                                                        A.BranchName >
+ Цена за м.куб. < A.PriceM3 >            Торговая надбавка <A.Bid>%                                            Лист № <A.NumList>
+-----------------------------------------------------------------------------------------------------------------------------------
+| КОД  |          НАИМЕНОВАНИЕ ПРОДУКЦИИ         |  ЕД.  | ОБЪЕМ  | МАССА  | ПЛО-  | ДЛИНА |ШИРИНА | ТОЛ- |  СВОБ.ОТ- |  ЦЕНА С   |
+|      |                                         |  ИЗМ. | М.КУБ. |        | ЩАДЬ  |       |ВЫСОТА | ЩИНА |  ПУС.ЦЕНА | ТОРГ.НАДБ.|
+-----------------------------------------------------------------------------------------------------------------------------------
+      end;
+// -- Конец разбиения на страницы
+    end;
+  end;
+end;
+-----------------------------------------------------------------------------------------------------------------------------------
+   АО "Гродненский комбинат строительных материалов"                                                                      Бюро ИАП
+
+      Начальник ПЭО _____________ /Шмидт Г.И./

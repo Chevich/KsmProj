@@ -1,0 +1,288 @@
+#define EtvConst_sDiPrintGroupGraphicsMode 65392
+#define EtvConst_sDiPrintInterval 65393
+#define EtvConst_sDiPrintFontDefault 65394
+#define EtvConst_sDiPrintFontNormal 65395
+#define EtvConst_sDiPrintFontElite 65396
+#define EtvConst_sDiPrintFontCond 65397
+#define EtvConst_sDiPrintFontCondElite 65398
+#define EtvConst_sDiPrintFontTitle 65399
+#define EtvConst_sDiPrintFontText 65400
+#define EtvConst_sDetail 65401
+#define XDBTFC_dsStateCaptions 65402
+#define jconsts_sChangeJPGSize 65403
+#define jconsts_sJPEGError 65404
+#define jconsts_sJPEGImageFile 65405
+#define EtvConst_sDiPrintPaperSize 65408
+#define EtvConst_sDiPrintPaperWidth 65409
+#define EtvConst_sDiPrintPaperHeight 65410
+#define EtvConst_sDiPrintOrientation 65411
+#define EtvConst_sDiPrintPortrait 65412
+#define EtvConst_sDiPrintLandscape 65413
+#define EtvConst_sDiPrintWOPages 65414
+#define EtvConst_sDiPrintNumberingTabS 65415
+#define EtvConst_sDiPrintNumberingPosition 65416
+#define EtvConst_sDiPrintNumberFirst 65417
+#define EtvConst_sDiPrintNumberFormat 65418
+#define EtvConst_sDiPrintNumberFirstPage 65419
+#define EtvConst_sDiPrintNumberTemplate 65420
+#define EtvConst_sDiPrintNumberFont 65421
+#define EtvConst_sDiPrintTextTabS 65422
+#define EtvConst_sDiPrintGroupTextMode 65423
+#define EtvConst_sDiPrintMode 65424
+#define EtvConst_sDiPrintTextMode 65425
+#define EtvConst_sDiPrintGraphicsMode 65426
+#define EtvConst_sDiPrintFileMode 65427
+#define EtvConst_sDiPrintPrintRange 65428
+#define EtvConst_sDiPrintExample 65429
+#define EtvConst_sDiPrintAll 65430
+#define EtvConst_sDiPrintPages 65431
+#define EtvConst_sDiPrintPrinter 65432
+#define EtvConst_sDiPrintFilenameHint 65433
+#define EtvConst_sDiPrintPageTabs 65434
+#define EtvConst_sDiPrintMargins 65435
+#define EtvConst_sDiPrintTop 65436
+#define EtvConst_sDiPrintLeft 65437
+#define EtvConst_sDiPrintRight 65438
+#define EtvConst_sDiPrintBottom 65439
+#define EtvConst_SPrinterError 65440
+#define EtvConst_SPrinterOpenDocError 65441
+#define EtvConst_SPrinterOpenFileError 65442
+#define EtvConst_SPrinterCloseDocError 65443
+#define EtvConst_SPrinterProcessDocError 65444
+#define EtvConst_SPrinterProcessFileError 65445
+#define EtvConst_SPrinterNothingToPrintError 65446
+#define EtvConst_SDBPasswordIncorrect 65447
+#define EtvConst_SProgramDown 65448
+#define EtvConst_SCancelDialPassword 65449
+#define EtvConst_SCantRun 65450
+#define EtvConst_SCloneRecordQuestion 65451
+#define EtvConst_sDiPrintCaption 65452
+#define EtvConst_sDiPrintCommonTabs 65453
+#define EtvConst_sDiPrintTitle 65454
+#define EtvConst_sDiPrintCopies 65455
+#define EtvConst_SFilterDlgBtnRestoreHint 65456
+#define EtvConst_SFilterDlgFilterNameHint 65457
+#define EtvConst_SFilterDlgBtnAddCondCaption 65458
+#define EtvConst_SFilterDlgBtnAddCondHint 65459
+#define EtvConst_SFilterDlgBtnDeleteCondCaption 65460
+#define EtvConst_SFilterDlgBtnDeleteCondHint 65461
+#define EtvConst_SFilterDlgAutoTotalCaption 65462
+#define EtvConst_SFilterDlgBtnSetCaption 65463
+#define EtvConst_SFilterDlgBtnSetHint 65464
+#define EtvConst_SFilterDlgBtnNoneCaption 65465
+#define EtvConst_SFilterDlgBtnNoneHint 65466
+#define EtvConst_SFilterDlgBtnCancelHint 65467
+#define EtvConst_SFilterDlgTotalHint 65468
+#define EtvConst_SFilterDlgSubTotalHint 65469
+#define EtvConst_SFilterDlgAllOrAnyCaption 65470
+#define EtvConst_SFilterDlgAllOrAnyHint 65471
+#define EtvConst_SNavRefresh 65472
+#define EtvConst_S_Or 65473
+#define EtvConst_S_And 65474
+#define EtvConst_S_Not 65475
+#define EtvConst_S_Number 65476
+#define EtvConst_S_Null 65477
+#define EtvConst_S_Like 65478
+#define EtvConst_SFilterInvalid 65479
+#define EtvConst_SFilterNumber 65480
+#define EtvConst_SChangeFilterSetAsError 65481
+#define EtvConst_SFilterLoadError 65482
+#define EtvConst_SFilterDlgCaption 65483
+#define EtvConst_SFilterDlgBtnPredHint 65484
+#define EtvConst_SFilterDlgBtnNextHint 65485
+#define EtvConst_SFilterDlgBtnAddHint 65486
+#define EtvConst_SFilterDlgBtnDeleteHint 65487
+#define EtvConst_SPopupClearField 65488
+#define EtvConst_SLoadFromFile 65489
+#define EtvConst_SSaveToFile 65490
+#define EtvConst_SPopupStretch 65491
+#define EtvConst_SPopupSearch 65492
+#define EtvConst_SPopupOrder 65493
+#define EtvConst_SPopupSearchOrder 65494
+#define EtvConst_SNavFirst 65495
+#define EtvConst_SNavPrior 65496
+#define EtvConst_SNavNext 65497
+#define EtvConst_SNavLast 65498
+#define EtvConst_SNavInsert 65499
+#define EtvConst_SNavDelete 65500
+#define EtvConst_SNavEdit 65501
+#define EtvConst_SNavPost 65502
+#define EtvConst_SNavCancel 65503
+#define EtvConst_SDialVisibleFields 65504
+#define EtvConst_SVisibleFields 65505
+#define EtvConst_SInvisibleFields 65506
+#define EtvConst_SGridPrintError 65507
+#define EtvConst_SGridPrintRecord 65508
+#define EtvConst_SGridPrintRecordError 65509
+#define EtvConst_SGridSetLengthFieldsByDataScan 65510
+#define EtvConst_SInvalidValue 65511
+#define EtvConst_SInvalidInformation 65512
+#define EtvConst_SGridOrRecord 65513
+#define EtvConst_sCloneRecord 65514
+#define EtvConst_sPopupCopy 65515
+#define EtvConst_sPopupPaste 65516
+#define EtvConst_sPopupSelectAll 65517
+#define EtvConst_sPopupPrint 65518
+#define EtvConst_SPopupClear 65519
+#define EtvConst_SNeedQueryClass 65520
+#define EtvConst_SPropSQLAbsent 65521
+#define EtvConst_SCancelCaption 65522
+#define EtvConst_SPrinterSetup 65523
+#define EtvConst_SError 65524
+#define EtvConst_SAutoCorrectInit 65525
+#define EtvConst_SLabelPump 65526
+#define EtvConst_SLabelPumpTableMissing 65527
+#define EtvConst_SLabelPumpAidTables 65528
+#define EtvConst_SLabelPumpTableProcess 65529
+#define EtvConst_SLabelPumpFieldProcess 65530
+#define EtvConst_SLabelPumpFieldCheckLength 65531
+#define EtvConst_SLabelPumpFieldLabel 65532
+#define EtvConst_SLabelPumpTableNotFound 65533
+#define EtvConst_SLabelPumpView 65534
+#define EtvConst_SLabelPumpViewFieldsProcess 65535
+STRINGTABLE
+BEGIN
+	EtvConst_sDiPrintGroupGraphicsMode,	"Графический режим"
+	EtvConst_sDiPrintInterval,	"Межстрочный интервал"
+	EtvConst_sDiPrintFontDefault,	"По умолчанию"
+	EtvConst_sDiPrintFontNormal,	"Пайка"
+	EtvConst_sDiPrintFontElite,	"Элита"
+	EtvConst_sDiPrintFontCond,	"Сжатый"
+	EtvConst_sDiPrintFontCondElite,	"Сжатая элита"
+	EtvConst_sDiPrintFontTitle,	"Шрифт заголовка"
+	EtvConst_sDiPrintFontText,	"Шрифт текста"
+	EtvConst_sDetail,	"Подробности"
+	XDBTFC_dsStateCaptions,	"\r\nПросмотр\r\nИзменение\r\nВставка\r\nПоиск\r\nРасчеты\r\nФильтр\r\n"
+	jconsts_sChangeJPGSize,	"Cannot change the size of a JPEG image"
+	jconsts_sJPEGError,	"JPEG error #%d"
+	jconsts_sJPEGImageFile,	"JPEG Image File"
+	EtvConst_sDiPrintPaperSize,	"Размер бумаги"
+	EtvConst_sDiPrintPaperWidth,	"Ширина"
+	EtvConst_sDiPrintPaperHeight,	"Высота"
+	EtvConst_sDiPrintOrientation,	"Ориентация"
+	EtvConst_sDiPrintPortrait,	"Книжная"
+	EtvConst_sDiPrintLandscape,	"Альбомная"
+	EtvConst_sDiPrintWOPages,	"Без страниц (режим текстовый и файл)"
+	EtvConst_sDiPrintNumberingTabS,	"Нумерация"
+	EtvConst_sDiPrintNumberingPosition,	"Положение"
+	EtvConst_sDiPrintNumberFirst,	"Номер первой страницы"
+	EtvConst_sDiPrintNumberFormat,	"Формат"
+	EtvConst_sDiPrintNumberFirstPage,	"Номер на первой странице"
+	EtvConst_sDiPrintNumberTemplate,	"- # -"
+	EtvConst_sDiPrintNumberFont,	"Шрифт (графический режим)"
+	EtvConst_sDiPrintTextTabS,	"Параметры текста"
+	EtvConst_sDiPrintGroupTextMode,	"Текстовый режим"
+	EtvConst_sDiPrintMode,	"Режим печати"
+	EtvConst_sDiPrintTextMode,	"Текстовый"
+	EtvConst_sDiPrintGraphicsMode,	"Графический"
+	EtvConst_sDiPrintFileMode,	"Файл"
+	EtvConst_sDiPrintPrintRange,	"Страницы"
+	EtvConst_sDiPrintExample,	"Например: 1,3,5-12"
+	EtvConst_sDiPrintAll,	"Все"
+	EtvConst_sDiPrintPages,	"Номера"
+	EtvConst_sDiPrintPrinter,	"Принтер"
+	EtvConst_sDiPrintFilenameHint,	"Имя файла"
+	EtvConst_sDiPrintPageTabs,	"Страница"
+	EtvConst_sDiPrintMargins,	"Поля"
+	EtvConst_sDiPrintTop,	"Верхнее"
+	EtvConst_sDiPrintLeft,	"Левое"
+	EtvConst_sDiPrintRight,	"Правое"
+	EtvConst_sDiPrintBottom,	"Нижнее"
+	EtvConst_SPrinterError,	"Ошибка при подключении к принтеру"
+	EtvConst_SPrinterOpenDocError,	"Ошибка при открытии документа для принтера"
+	EtvConst_SPrinterOpenFileError,	"Ошибка при открытии файла документа"
+	EtvConst_SPrinterCloseDocError,	"Ошибка при закрытии документа"
+	EtvConst_SPrinterProcessDocError,	"Ошибка при выводе документа на принтер"
+	EtvConst_SPrinterProcessFileError,	"Ошибка при выводе документа в файл"
+	EtvConst_SPrinterNothingToPrintError,	"Печатать нечего"
+	EtvConst_SDBPasswordIncorrect,	"Пароль неправилен!"
+	EtvConst_SProgramDown,	"Программа завершается!"
+	EtvConst_SCancelDialPassword,	"Отмена ввода пароля"
+	EtvConst_SCantRun,	"Hевозможно запустить"
+	EtvConst_SCloneRecordQuestion,	"Клонировать?"
+	EtvConst_sDiPrintCaption,	"Установки печати"
+	EtvConst_sDiPrintCommonTabs,	"Общие"
+	EtvConst_sDiPrintTitle,	"Заголовок"
+	EtvConst_sDiPrintCopies,	"Число копий"
+	EtvConst_SFilterDlgBtnRestoreHint,	"Отмена текущих изменений"
+	EtvConst_SFilterDlgFilterNameHint,	"Название фильтра"
+	EtvConst_SFilterDlgBtnAddCondCaption,	"Добавить"
+	EtvConst_SFilterDlgBtnAddCondHint,	"Добавить условие (Ctrl+Серый_плюс)"
+	EtvConst_SFilterDlgBtnDeleteCondCaption,	"Удалить"
+	EtvConst_SFilterDlgBtnDeleteCondHint,	"Удалить условие (Ctrl+серый_минус)"
+	EtvConst_SFilterDlgAutoTotalCaption,	"\"И\" для всех условий"
+	EtvConst_SFilterDlgBtnSetCaption,	"Установить выборку"
+	EtvConst_SFilterDlgBtnSetHint,	"Установка фильтра (выборки)"
+	EtvConst_SFilterDlgBtnNoneCaption,	"Отключить"
+	EtvConst_SFilterDlgBtnNoneHint,	"Отключение установленного фильтра"
+	EtvConst_SFilterDlgBtnCancelHint,	"Отмена введенных изменений"
+	EtvConst_SFilterDlgTotalHint,	" Описание связей между условиями. Например,\n №1 и (№2 или №4), где №1 - первое условие"
+	EtvConst_SFilterDlgSubTotalHint,	" Символ ' | ' - разделитель групп условий"
+	EtvConst_SFilterDlgAllOrAnyCaption,	"Для всех"
+	EtvConst_SFilterDlgAllOrAnyHint,	"Условие должно выполниться для всех записей"
+	EtvConst_SNavRefresh,	"Пересчитать"
+	EtvConst_S_Or,	"ИЛИ"
+	EtvConst_S_And,	"И"
+	EtvConst_S_Not,	"НЕ"
+	EtvConst_S_Number,	"№"
+	EtvConst_S_Null,	"Пусто"
+	EtvConst_S_Like,	"~"
+	EtvConst_SFilterInvalid,	"Выражение фильтра некорректно"
+	EtvConst_SFilterNumber,	"Фильтр #"
+	EtvConst_SChangeFilterSetAsError,	"Изменение допустимо только при отключенном фильтре"
+	EtvConst_SFilterLoadError,	"Ошибка при открытии данных фильтра"
+	EtvConst_SFilterDlgCaption,	"Определение фильтров"
+	EtvConst_SFilterDlgBtnPredHint,	"Предыдущий фильтр"
+	EtvConst_SFilterDlgBtnNextHint,	"Следующий фильтр"
+	EtvConst_SFilterDlgBtnAddHint,	"Добавить фильтр"
+	EtvConst_SFilterDlgBtnDeleteHint,	"Удалить фильтр"
+	EtvConst_SPopupClearField,	"Очистить поле"
+	EtvConst_SLoadFromFile,	"Загрузить из файла"
+	EtvConst_SSaveToFile,	"Записать в файл"
+	EtvConst_SPopupStretch,	"Масштаб"
+	EtvConst_SPopupSearch,	"Поиск по"
+	EtvConst_SPopupOrder,	"Сортировка по"
+	EtvConst_SPopupSearchOrder,	"Поиск и сортировка по"
+	EtvConst_SNavFirst,	"Первая запись"
+	EtvConst_SNavPrior,	"Предыдущая запись"
+	EtvConst_SNavNext,	"Следующая запись"
+	EtvConst_SNavLast,	"Последняя запись"
+	EtvConst_SNavInsert,	"Добавить запись"
+	EtvConst_SNavDelete,	"Удалить запись"
+	EtvConst_SNavEdit,	"Редактировать запись"
+	EtvConst_SNavPost,	"Зафиксировать"
+	EtvConst_SNavCancel,	"Отмена"
+	EtvConst_SDialVisibleFields,	"Видимость полей"
+	EtvConst_SVisibleFields,	"Видимые поля"
+	EtvConst_SInvisibleFields,	"Невидимые поля"
+	EtvConst_SGridPrintError,	"Ошибка при печати таблицы"
+	EtvConst_SGridPrintRecord,	"Печать записи"
+	EtvConst_SGridPrintRecordError,	"Ошибка при печати записи"
+	EtvConst_SGridSetLengthFieldsByDataScan,	"Подбор длин полей"
+	EtvConst_SInvalidValue,	"Неверное значение"
+	EtvConst_SInvalidInformation,	"Некорректная информация"
+	EtvConst_SGridOrRecord,	"Таблица - Одна запись"
+	EtvConst_sCloneRecord,	"Клонировать запись"
+	EtvConst_sPopupCopy,	"Копировать"
+	EtvConst_sPopupPaste,	"Вставить"
+	EtvConst_sPopupSelectAll,	"Выделить все"
+	EtvConst_sPopupPrint,	"Печать"
+	EtvConst_SPopupClear,	"Очистить"
+	EtvConst_SNeedQueryClass,	"Необходимо определить \"OtherQueryClass\" из юнита EtvOther\rили включить опцию \"BDE_IS_USED\" в файле Etv.Inc\rдля генерации Query"
+	EtvConst_SPropSQLAbsent,	"Свойство \"SQL\" отсутствует в датасете"
+	EtvConst_SCancelCaption,	"Отмена"
+	EtvConst_SPrinterSetup,	"Установки принтера"
+	EtvConst_SError,	"Ошибка "
+	EtvConst_SAutoCorrectInit,	"Этап инициализации"
+	EtvConst_SLabelPump,	"Перекачка меток"
+	EtvConst_SLabelPumpTableMissing,	"Отсутствует имя таблицы"
+	EtvConst_SLabelPumpAidTables,	"Этап организации вспомомательных таблиц"
+	EtvConst_SLabelPumpTableProcess,	"Этап обработки выбранной таблицы"
+	EtvConst_SLabelPumpFieldProcess,	"Этап обработки поля"
+	EtvConst_SLabelPumpFieldCheckLength,	"Проверка длины для поля"
+	EtvConst_SLabelPumpFieldLabel,	"Присвоение DisplayLabels для поля"
+	EtvConst_SLabelPumpTableNotFound,	"Таблица %s не найдена"
+	EtvConst_SLabelPumpView,	"Перекачка меток для View"
+	EtvConst_SLabelPumpViewFieldsProcess,	"Этап обработки полей выбранной таблицы"
+END
+

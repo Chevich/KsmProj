@@ -1,0 +1,224 @@
+[MainWindow]
+Create=1
+Visible=1
+State=0
+Left=0
+Top=2
+Width=640
+Height=106
+MaxLeft=0
+MaxTop=0
+ClientWidth=632
+ClientHeight=60
+
+[ProjectManager]
+LargeButtons=1
+Column0Width=75
+Column1Width=125
+Column2Width=125
+
+[PropertyInspector]
+Create=1
+Visible=1
+State=0
+Left=1
+Top=108
+Width=218
+Height=383
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=210
+ClientHeight=359
+SplitPos=104
+
+[HistoryLists\hiWatchExpression]
+Count=3
+H0=LookupFields
+H1=Field.name
+H2=TField(EtvField.LookupFields[fEditFieldIndex]).name
+
+[HistoryLists\hiEvalExpression]
+Count=32
+H0=ModuleProd.ProdPriceDDeclar.State
+H1=ModuleProd.ProdPriceDDeclar
+H2=QueriesProcess.SQL[0]
+H3=QueriesLookUp.SQL[0]
+H4=QueriesLookUp
+H5=s
+H6=TbTables.Locate('tname','InvoiceV',[])
+H7=TbTables.RecordCount
+H8=TbTables.Active
+H9=TbTables.DataBaseName
+H10=TbTables
+H11=ADataSet.Name
+H12=ADataSet
+H13=(15 div 8)>0
+H14=15 div 8
+H15=15 div8
+H16=#1111
+H17=$1111
+H18=$1111 or $0000
+H19=$1110 or $0000
+H20=$1111 and $0000
+H21=$1111 and $0001
+H22=$0101 and $0000
+H23=$0101 and 1
+H24=$0100 and 1
+H25=$0100 and $0001
+H26=$0010 and $0001
+H27=$0001 and $0001
+H28=$0000 and $0001
+H29=$1000 and $0001
+H30=$1100 and $0001
+H31=$1110 and $0001
+
+[HistoryLists\hiEvalNewValue]
+Count=5
+H0=1
+H1=10200
+H2=fkCalculated
+H3=False
+H4='  where (Prod=:aProd) and (Tare=:aTare) and (TPrice=:aTPrice) '
+
+[HistoryLists\hiOpenFile]
+Count=32
+H0=c:\b\ksm\contract\contract.dfm
+H1=c:\b\ksm\contract\mdcontr.pas
+H2=c:\b\ksm\contract\mdcontr.dfm
+H3=c:\b\ksm\contract\contrprod.dfm
+H4=c:\b\ksm\common\place.dfm
+H5=c:\b\ksm\common\mdcommon.dfm
+H6=c:\b\ksm\common\bank.dfm
+H7=c:\b\xlib\tlsform.pas
+H8=\\igo\c\b\etv\etvdb.pas
+H9=c:\borland\delphi3\source\vcl\dialogs.pas
+H10=c:\b\xlib\xtfc.pas
+H11=c:\b\etv\etvdb.pas
+H12=c:\b\etv\etvtable.pas
+H13=c:\b\ksm\shb\invoicea.shb
+H14=c:\b\ksm\shb\prodprice.shb
+H15=c:\borland\delphi3\source\vcl\db.pas
+H16=c:\b\xetv\xefields.pas
+H17=c:\borland\delphi3\source\vcl\dbtables.pas
+H18=c:\borland\delphi3\source\vcl\drtable.pas
+H19=c:\b\other\abcutil.pas
+H20=\\igo\c\b\rx\units\vclutils.pas
+H21=c:\b\etv\etvpas.pas
+H22=c:\b\etv\etvfilt.pas
+H23=c:\b\xlib\xforms.pas
+H24=c:\b\etv\fbase.pas
+H25=c:\b\link\lnprops.pas
+H26=c:\b\etv\etvlook.pas
+H27=c:\borland\delphi3\source\vcl\dbctrls.pas
+H28=c:\b\etv\etvgrid.pas
+H29=c:\b\rx\rxtools.dpk
+H30=c:\b\xetv\xectrls.pas
+H31=c:\b\etv\readme.txt
+
+[HistoryLists\hiWriteBlock]
+Count=3
+H0=c:\b\ksm\shb\111
+H1=c:\b\etv\lev.1.pas
+H2=c:\borland\delphi3\bin\aaa.txt
+
+[HistoryLists\hiRunParams]
+Count=4
+H0=-p
+H1=-uGAL
+H2=-u
+H3=-KUL
+
+[HistoryLists\hiUnitAlias]
+Count=1
+H0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[HistoryLists\hiLibUnitAliases]
+Count=1
+H0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE
+
+[HistoryLists\hiPakDLLOutputDir]
+Count=1
+H0=c:\b
+
+[HistoryLists\hiPakDCPOutputDir]
+Count=1
+H0=c:\b
+
+[Closed Files]
+File_0=SourceModule,'C:\B\KSM\Contract\Contract.dfm',0,1,1,1,1,0,0
+File_1=SourceModule,'C:\B\KSM\Contract\MdContr.pas',0,1,1,1,1,0,0
+File_2=SourceModule,'C:\B\KSM\Contract\MdContr.dfm',0,1,1,1,1,0,0
+File_3=SourceModule,'C:\B\KSM\Common\Place.dfm',0,1,1,1,1,0,0
+File_4=SourceModule,'C:\B\KSM\Common\MdCommon.dfm',0,1,1,1,1,0,0
+File_5=SourceModule,'C:\B\KSM\Common\Bank.dfm',0,1,1,1,1,0,0
+File_6=PackageEditModule,'c:\b\XLib\DclXLibc.dpk',0,200,110,585,407,1
+File_7=SourceModule,'\\Igo\c\B\Etv\EtvDB.pas',0,1,1,1,1,0,0
+File_8=SourceModule,'C:\BORLAND\Delphi3\Source\VCL\dbtables.pas',0,1,1,1,1,0,0
+File_9=SourceModule,'C:\B\Other\ABCutil.pas',0,1,1,1,1,0,0
+
+[Modules]
+Count=1
+EditWindowCount=1
+Module0=C:\B\KSM\Contract\ContrProd.dfm
+
+[C:\B\KSM\Contract\ContrProd.dfm]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[EditWindow0]
+Create=1
+Visible=1
+State=0
+Left=210
+Top=129
+Width=544
+Height=380
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=536
+ClientHeight=353
+SplitPos=-1
+MessagePane=0
+ViewCount=1
+CurrentView=0
+View0=0
+
+[View0]
+Module=C:\B\KSM\Contract\ContrProd.dfm
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+
+[Watches]
+Count=0
+
+[Breakpoints]
+Count=0
+
+[PVCS Browser]
+Left=15
+Top=59
+Width=625
+Height=393
+State=0
+Visible=0
+
+[PVCS VDiff]
+Left=49
+Top=0
+Width=591
+Height=452
+Layout=1
+Orientation=1
+State=0
+Visible=0
+File1Color=16711680
+File2Color=255
+SpaceColor=16776960
+TextColor=0
+
+[Project Resource Expert]
+Visible=0
+

@@ -1,0 +1,1115 @@
+unit MInvoice;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ABEForms, StdCtrls, SrcIndex, XDBForms, ExtCtrls, Grids, DBGrids, DB,XEFields,
+  EtvGrid, XECtrls, ComCtrls, EtvPages, RXSplit, ToolEdit, RXDBCtrl,
+  EtvRXCtl, Mask, DBCtrls, EtvContr, RXCtrls, XCtrls, EtvLook, XMisc, ETVDB,
+  Buttons, DBtables, ImgList;
+
+type
+  TMInvoiceForm = class(TABEForm)
+    LabelNumInvoice: TXLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    PrintBtn: TSpeedButton;
+    EditDateExp: TXEDBDateEdit;
+    AddFields: TCheckBox;
+    Panel777: TPanel;
+    Button676: TBitBtn;
+    PanelABC: TPanel;
+    Panel999: TPanel;
+    EditNumDoc: TXEDBEdit;
+    LabelDateDoc: TXLabel;
+    EditDateDoc: TXEDBDateEdit;
+    XEDbGrid1: TXEDbGrid;
+    LabelSourceDepot: TXLabel;
+    LookupEditClientName: TXEDBLookupCombo;
+    LabelRecipient: TXLabel;
+    LookupEditDestDepotName: TXEDBLookupCombo;
+    LabelKreditName: TXLabel;
+    LookupEditKreditName: TXEDBLookupCombo;
+    LabelNameDoc: TXLabel;
+    LookupEditOperationName: TXEDBLookupCombo;
+    LookupEditSourceDepotName: TXEDBLookupCombo;
+    LookupEditRecipientName: TXEDBLookupCombo;
+    LabelGroupBox: TGroupBox;
+    LookupEditCurrencyName: TXEDBLookupCombo;
+    LabelCourse: TXLabel;
+    LabelCourse1: TXLabel;
+    EditNumInvoice: TXEDBEdit;
+    EditInfo: TXEDBEdit;
+    LabelInfo: TXLabel;
+    pnlAllower: TPanel;
+    XLabel1: TXLabel;
+    LookupEditSectionName: TXEDBLookupCombo;
+    pnlContract: TPanel;
+    XLabel2: TXLabel;
+    LookupEditContractName: TXEDBLookupCombo;
+    EditContractName: TXEDBEdit;
+    pnlStatRash: TPanel;
+    XLabel2Rash: TXLabel;
+    LookupEditStatRashName: TXEDBLookupCombo;
+    pnlObjZatr: TPanel;
+    XLabel2Zatr: TXLabel;
+    LookupEditObjZatrName: TXEDBLookupCombo;
+    XLabel3: TXLabel;
+    Edits_Auto: TXEDBEdit;
+    XLabel4: TXLabel;
+    Edit_sAuto_ownr: TXEDBEdit;
+    XLabel5: TXLabel;
+    Edit_sAuto_lst: TXEDBEdit;
+    XLabel6: TXLabel;
+    Edit_Usl_Post: TXEDBEdit;
+    XLabel7: TXLabel;
+    Edit_Osn_Vyd: TXEDBEdit;
+    XLabel8: TXLabel;
+    Edit_Cel_Prb: TXEDBEdit;
+    XLabel9: TXLabel;
+    Edit_sAuto_drvr: TXEDBEdit;
+    XLabel10: TXLabel;
+    Edit_sPlace_Razgr: TXEDBEdit;
+    LookupEditAccount_SSName: TXEDBLookupCombo;
+    Panel4: TPanel;
+    XLabel11: TXLabel;
+    XEDBLookupCombo1: TXEDBLookupCombo;
+    Panel5: TPanel;
+    XLabel12: TXLabel;
+    XEDBLookupCombo2: TXEDBLookupCombo;
+    XLabel13: TXLabel;
+    XEDBEdit1: TXEDBEdit;
+    XEDBEdit2: TXEDBEdit;
+    XLabel14: TXLabel;
+    XLabel15: TXLabel;
+    btnEditSS: TSpeedButton;
+    btnSaveSS: TSpeedButton;
+    btnCancelSS: TSpeedButton;
+    Button1: TButton;
+    Button2: TBitBtn;
+    Button3: TBitBtn;
+    Button4: TBitBtn;
+    CheckBox1: TCheckBox;
+    EditSummaBtn: TSpeedButton;
+    DBText_IDInvoice: TEtvDBText;
+    cbAllMat: TCheckBox;
+    XLabel16: TXLabel;
+    procedure Panel1Exit(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
+    procedure PrintButtonClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure XEDbGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure EditNumDocKeyPress(Sender: TObject; var Key: Char);
+    procedure EditInvButtonClick(Sender: TObject);
+    procedure XEDbGrid1UpdateLookupCombo(Sender: TColumn; Field: TField);
+    procedure CheckBox1Click(Sender: TObject);
+    procedure EditSummaBtnClick(Sender: TObject);
+    procedure btnSaveSSClick(Sender: TObject);
+    procedure btnCancelSSClick(Sender: TObject);
+    procedure GridDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure btnEditSSClick(Sender: TObject);
+    procedure XEDbGrid1Enter(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure XEDbGrid1Exit(Sender: TObject);
+    procedure FormHide(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure AddFieldsClick(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure DBText_IDInvoiceClick(Sender: TObject);
+    procedure cbAllMatClick(Sender: TObject);
+    procedure PrintBtnClick(Sender: TObject);
+    procedure etAmountChange(Sender: TObject);
+    procedure Button676Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+    Combo: TXEDBInplaceLookUpCombo;
+    procedure ComboOnDropDown(Sender: TObject);
+    procedure ComboOnCloseUp(Sender: TObject);
+  public
+    { Public declarations }
+    GlobalMode : integer;
+    AutoFlag: boolean;
+    function GetFio(TN: integer): string;
+    procedure ChangeFormFace(ChangedOperation: boolean = False);
+    procedure ShowFields(Operation: integer; Dest: integer);
+    procedure SetEnabledPanel999(State: Boolean; Control: TWinControl);
+    procedure CheckEditSS(isEnabled: boolean);
+    procedure SetLockGlyph(LockValue: integer);
+  end;
+
+var
+  MInvoiceForm: TMInvoiceForm;
+
+implementation
+{$R *.DFM}
+Uses MdMaterials, MdInvc, XApps, ETVRus,EtvFilt, EtvMem, XDBTfc, MdBase;
+
+
+procedure TMInvoiceForm.ChangeFormFace;
+  procedure ChangeAccount(Account: string);
+  begin
+    if ChangedOperation and (LookupEditOperationName.DataSource.DataSet.State in [dsInsert, dsEdit]) then
+      LookupEditOperationName.DataSource.DataSet.FieldByName('Kredit').AsString:=Account;
+  end;
+begin
+  if not Assigned(self) then begin
+     MdMat.MInvoiceC.Execute;
+     Exit;
+  end;
+  if (PageControl1.ActivePage.Name='FormSheet') then
+  begin
+    if mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger<>GlobalMode then
+      begin
+        GlobalMode:=mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger;
+        //PrintButton.Enabled:=mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger=3;
+        Panel777.Visible:=mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger = 7;
+        //Panel999.Hide;
+        LabelRecipient.Visible := True;
+        EditInfo.TabStop:=False;
+        if (mdMat.MInvoiceHDeclarCurrency.AsInteger<>974) and ChangedOperation then
+          mdMat.MInvoiceHDeclarCurrency.AsInteger:=974;
+        case mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger of
+          3,9,13,14,18: begin // ПРИХОД, 9 - ВЗЯТИЕ НА БАЛАНС
+               case mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger of
+                  3: begin
+                       LabelNameDoc.Caption:='Прих. ордер №';
+                       ChangeAccount(mdMat.GetDefaultAccount);
+                     end;
+                 9: LabelNameDoc.Caption:='Взятие на баланс №';
+                13: LabelNameDoc.Caption:='Ввод остатков №';
+                14: begin
+                      LabelNameDoc.Caption:='Внерел. доход №';
+                    end;
+             end;
+               mdMat.ChangeMaterialLookup;
+               cbAllMat.Visible:=False;
+               if (mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger<>9)
+                and (mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger<>13) then
+                 begin
+                   LabelSourceDepot.Show;
+                   LookupEditClientName.Show;
+                   LabelNumInvoice.Show;
+                   EditNumInvoice.Show;
+                 end
+               else
+                 begin
+                   LabelSourceDepot.Hide;
+                   LookupEditClientName.Hide;
+                   LabelNumInvoice.Hide;
+                   EditNumInvoice.Hide;
+                 end;
+               LookupEditDestDepotName.Show;
+               pnlAllower.Show;
+               pnlContract.Show;
+               pnlObjZatr.Hide;
+               pnlStatRash.Hide;
+               LookupEditContractName.Hide;
+               EditContractName.Show;
+               LabelGroupBox.Hide;
+               mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options+[foValueNotInLookUp];
+               mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options+[foValueNotInLookUp];
+               LookupEditSourceDepotName.Hide;
+               LookupEditRecipientName.Hide;
+               LookupEditKreditName.Show;
+               EditNumDoc.Enabled:=False;
+               Button676.Visible:=mdMat.IsShop>0;
+               if mdMat.isShop>0 then mdMat.MInvoiceTDeclarPrice_no_BID.DisplayLabel:='Цена без нац.';
+               ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger, -1);
+             end;
+          16: begin // ПРИХОД ПО РОЗНИЦЕ
+               LabelNameDoc.Caption:='Прих. ордер №';
+               ChangeAccount(mdMat.GetDefaultAccount);
+               cbAllMat.Visible:=False;
+               mdMat.ChangeMaterialLookup(False);
+               LabelNumInvoice.Show; EditNumInvoice.Show;
+               LabelSourceDepot.Show;
+               LookupEditClientName.Show;
+               LookupEditDestDepotName.Show;
+               pnlAllower.Show;
+               pnlContract.Show;
+               pnlObjZatr.Hide;
+               pnlStatRash.Hide;
+               LookupEditContractName.Hide;
+               EditContractName.Show;
+               LabelGroupBox.Hide;
+               mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options+[foValueNotInLookUp];
+               mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options+[foValueNotInLookUp];
+               LookupEditSourceDepotName.Hide;
+               LookupEditRecipientName.Hide;
+               LookupEditKreditName.Show;
+               EditNumDoc.Enabled:=True;
+               Button676.Visible:=mdMat.IsShop>0;
+               ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger, -1);
+             end;
+          4,6,8:
+             begin // 4 - РАСХОД, 6 - СПИСАНИЕ, 8 - СПИСАНИЕ НА СЕБЕСТОИМОСТЬ
+               pnlObjZatr.Hide;
+               pnlStatRash.Hide;
+               cbAllMat.Visible:=False;
+               //Panel999.Hide;
+               SetEnabledPanel999(False, Panel999);
+               mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options-[foValueNotInLookUp];
+               mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options-[foValueNotInLookUp];
+               case mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger of
+                 4: begin
+                      LabelNameDoc.Caption:='Внутр. перемещение №';
+                      if mdMat.IsShop>0 then
+                        ChangeAccount('41.00')
+                      else
+                        ChangeAccount('10.02');
+                      //Panel999.Show;
+                      mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options+
+                         [foValueNotInLookUp];
+                      mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options+
+                         [foValueNotInLookUp];
+                    end;
+                 6: LabelNameDoc.Caption:='Накладная списания №';
+                 8: begin
+                      LabelNameDoc.Caption:='На себестоимость №';
+                      pnlObjZatr.Show;
+                      pnlStatRash.Hide; //Show;
+                      cbAllMat.Visible:=True;
+                    end;
+               end;
+               //mdMat.ChangeMaterialLookup(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger = 8);
+               mdMat.ChangeMaterialLookup(True);
+               LabelNumInvoice.Hide; EditNumInvoice.Hide;
+               LookupEditDestDepotName.Visible := not (mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger in [6,8]);
+               LabelRecipient.Visible := LookupEditDestDepotName.Visible;
+               LookupEditClientName.Hide;
+               LabelGroupBox.Hide;
+               LabelSourceDepot.Show;
+               pnlAllower.Hide;
+               pnlContract.Hide;
+               LookupEditRecipientName.Hide;
+               LookupEditSourceDepotName.Show;
+               LookupEditKreditName.Show;
+               EditNumDoc.Enabled:=True;
+               Button676.Visible:=False;
+               if mdMat.isShop>0 then mdMat.MInvoiceTDeclarPrice_no_BID.DisplayLabel:='Цена отп.';
+               ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger, mdMat.MInvoiceHDeclar.FieldByName('DestDepot').AsInteger);
+             end;
+          7, 15: begin
+               case mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger of
+                  7: begin
+                        LabelNameDoc.Caption:='Продажа';
+                        ChangeAccount('91.04');
+                     end;
+                 15: begin
+                        LabelNameDoc.Caption:='Внерелизац. расход №';
+                        ChangeAccount('92.00');
+                     end;
+               end;
+               EditInfo.TabStop:=True;
+               cbAllMat.Visible:=False;
+               mdMat.ChangeMaterialLookup(True);
+               LookupEditClientName.Hide;
+               LookupEditDestDepotName.Hide;
+               LabelSourceDepot.Show;
+               pnlAllower.Hide;
+               pnlContract.Show;
+               LookupEditContractName.Hide;
+               EditContractName.Show;
+               pnlObjZatr.Hide;
+               pnlStatRash.Hide;
+               LabelGroupBox.Hide;
+               mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options-[foValueNotInLookUp];
+               mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options-[foValueNotInLookUp];
+               LookupEditSourceDepotName.Show;
+               LookupEditRecipientName.Show;
+               LookupEditKreditName.Show;
+               EditNumDoc.Enabled:=True;
+               Button676.Visible:=False;
+               if mdMat.isShop>0 then mdMat.MInvoiceTDeclarPrice_no_BID.DisplayLabel:='Цена отп.';
+               ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger, -1);
+             end;
+          10: begin
+               mdMat.ChangeMaterialLookup;
+               LabelNameDoc.Caption:='Акт приемки №';
+               LabelNumInvoice.Show; EditNumInvoice.Show;
+               LookupEditClientName.Show;
+               LookupEditDestDepotName.Show;
+               LabelSourceDepot.Show;
+               pnlAllower.Hide;
+               pnlContract.Hide;
+               pnlObjZatr.Hide;
+               pnlStatRash.Hide;
+               LabelGroupBox.Hide;
+               cbAllMat.Visible:=False;
+               mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options+[foValueNotInLookUp];
+               mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options-[foValueNotInLookUp];
+               LookupEditSourceDepotName.Hide;
+               LookupEditRecipientName.Hide;
+               EditNumDoc.Enabled:=True;
+               Button676.Visible:=mdMat.IsShop>0;
+               ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger, -1);
+             end;
+          11: begin
+               cbAllMat.Visible:=False;
+               mdMat.ChangeMaterialLookup;
+               LabelNameDoc.Caption:='Вал. накладная №';
+               LabelNumInvoice.Show; EditNumInvoice.Show;
+               LookupEditClientName.Show;
+               LookupEditDestDepotName.Show;
+               LabelSourceDepot.Show;
+               pnlAllower.Show;
+               pnlContract.Show;
+               LookupEditContractName.Show;
+               EditContractName.Hide;
+               pnlObjZatr.Hide;
+               pnlStatRash.Hide;
+               LabelGroupBox.Show;
+               mdMat.MInvoiceTdeclarPriceName.Options:=mdMat.MInvoiceTdeclarPriceName.Options+[foValueNotInLookUp];
+               mdMat.MInvoiceTdeclarPriceNameBy.Options:=mdMat.MInvoiceTdeclarPriceNameBY.Options+[foValueNotInLookUp];
+               LookupEditSourceDepotName.Hide;
+               LookupEditRecipientName.Hide;
+               EditNumDoc.Enabled:=True;
+               Button676.Visible:=mdMat.IsShop>0;
+               ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger, -1);
+             end;
+      end;
+    end; //end case
+    LookupEditCurrencyName.Enabled:=mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger=11;
+  end;
+end;
+
+procedure TMInvoiceForm.Panel1Exit(Sender: TObject);
+begin
+  inherited;
+  if not (mdMat.MInvoiceTDeclar.State in dsEditModes) then
+    mdMat.MInvoiceTDeclar.Refresh;
+end;
+
+procedure TMInvoiceForm.PageControl1Change(Sender: TObject);
+begin
+  inherited;
+  ChangeFormFace
+end;
+
+procedure TMInvoiceForm.PrintButtonClick(Sender: TObject);
+ var aDeviceType: String;
+    aNumCopies:integer;
+begin
+   with mdMat do
+   begin
+     aDeviceType:='Screen';
+     aNumCopies:=1;
+     mdMat.PLMInOrderT.RangeEndCount:=aNumCopies;
+     with MReport do begin
+       Template.FileName:=DirShb+'\MInOrder.rtm';
+       Template.LoadFromFile;
+       Bands[0].Objects[0].Caption:='Приходный ордер № '+
+         MInvoiceHDeclar.FieldByName('NumDoc').AsString+' по накладной '+
+         MInvoiceHDeclar.FieldByName('InvoiceNum').AsString;
+       Bands[0].Objects[2].Caption:=DateToStrEtv(MInvoiceHDeclar.FieldByName('DateDoc').AsDateTime);
+       DeviceType:=aDeviceType;
+       Print;
+     end;
+   end;
+end;
+
+procedure TMInvoiceForm.Button1Click(Sender: TObject);
+begin
+  inherited;
+  MdMaterials.mdMat.MAmountsC.Execute;
+end;
+
+procedure TMInvoiceForm.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Self.Left := 0;
+  Self.Top := 0;
+  GlobalMode := -9;
+  Combo := nil;
+  MInvoiceForm := Self;
+end;
+
+procedure TMInvoiceForm.FormActivate(Sender: TObject);
+begin
+  inherited;
+  with ModuleInvoice.AllowerLookup do
+    begin
+      Filtered := False;
+      Filter :='(TASK=0) or (TASK=2)';
+      Filtered := True;
+    end;
+  //ChangeFormFace;
+
+end;
+
+procedure TMInvoiceForm.XEDbGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn;
+  State: TGridDrawState);
+begin
+  inherited;
+  if Column.Field.Tag = 0 then
+    begin
+      if (gdSelected in State) and (gdFocused in State) then
+//        TDBGrid(Sender).Canvas.Brush.Color:=clYellow;
+      else
+        begin
+          TDBGrid(Sender).Canvas.Brush.Color:=clWindow
+        end;
+    end;
+  with mdMat.MInvoiceTDeclarMaterialName do
+   if (ValueByLookName('Gold') = null) and
+      (ValueByLookName('Platinum') = null) and
+      (ValueByLookName('Silver') = null) and
+      (ValueByLookName('Palladium') = null) and
+      (ValueByLookName('Rutenium') = null) and
+      (ValueByLookName('Rodium') = null) and
+      (ValueByLookName('Iridium') = null)
+    then
+      if (gdSelected in State) and (gdFocused in State) then
+        TDBGrid(Sender).Canvas.Font.Color := clHighlightText
+      else
+        TDBGrid(Sender).Canvas.Font.Color := clWindowText
+    else
+      if (gdSelected in State) and (gdFocused in State) then
+        TDBGrid(Sender).Canvas.Font.Color := clYellow
+      else
+        TDBGrid(Sender).Canvas.Font.Color := clBlue;
+  TDBGrid(Sender).Font.Size:=12;
+  TDBGrid(Sender).DefaultDrawColumnCell(Rect,DataCol,Column,State);
+end;
+
+procedure TMInvoiceForm.EditNumDocKeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+  if (mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger in [3,11,14,16]) and
+     not (Key in ['0'..'9']) then Key:=#0;
+end;
+
+procedure TMInvoiceForm.EditInvButtonClick(Sender: TObject);
+//  var ss: string;
+begin
+{  inherited;
+  if (mdMat.MInvoiceTDeclar.State = dsBrowse) then
+    begin
+      ss:='';
+      with mdMat.MInvoiceTDeclar do
+        begin
+          DisableControls;
+          First;
+          while not Eof do
+            begin
+              ss := ss + ' (KOD = '+mdMat.MInvoiceTDeclarMaterial.AsString+') ';
+              Next;
+              if not Eof then ss := ss + ' or ';
+            end;
+          EnableControls;
+        end;
+      mdMat.MaterialsEdit2Declar.Filtered := False;
+      mdMat.MaterialsEdit2Declar.Filter := ss;
+      mdMat.MaterialsEdit2Declar.Filtered := True;
+      mdMat.MaterialsCC.Execute;
+    end;}
+end;
+
+procedure TMInvoiceForm.XEDbGrid1UpdateLookupCombo(Sender: TColumn; Field: TField);
+begin
+  inherited;
+  if Field = mdMat.MInvoiceTDeclarMaterialName then
+   with mdMat do begin
+    if MInvoiceTDeclarMaterialName.LookupDataSet = MaterialsEditLookupCalc then
+      if not MaterialsEditLookupCalc.Active then
+        with MaterialsEditLookupCalc do begin
+          Close;
+          Open;
+        end;
+   end;
+   if not Assigned(Combo) and (XEDbGrid1.LookupCombo is TXEDBInplaceLookUpCombo) then
+     begin
+       Combo := TXEDBInplaceLookUpCombo(XEDbGrid1.LookupCombo);
+       {Combo.OnDropDown:=ComboOnDropDown;}
+       Combo.OnCloseUp:=ComboOnCloseUp;
+       Combo.EtvLookTimer.Interval:=1000;
+     end;
+end;
+
+procedure TMInvoiceForm.ComboOnDropDown(Sender: TObject);
+var aActiveControl: TComponent;
+begin
+  if TDBLookupComboBox(Sender).Field.FieldName='MaterialName' then
+    mdMat.OnSourceDepotChange(Sender);
+end;
+
+procedure TMInvoiceForm.ComboOnCloseUp(Sender: TObject);
+begin
+  (*----------------------------------------------------------------*)
+  if (Combo.Field = mdMat.MInvoiceTDeclarPriceNameBy) and
+     (Combo.Tag<>Word('Z')) and
+     (mdMat.MInvoiceTDeclar.State<>dsBrowse) and
+     not (mdMat.MInvoiceTDeclar.FieldByName('PriceNameBy').Value = null)
+  then with mdMat.MInvoiceTDeclar do
+    begin
+      TXELookField(FieldByName('PriceNameBy')).ValueByLookNameToField('PriceUC',FieldByName('PriceUC'));
+      //TXELookField(FieldByName('PriceNameBy')).ValueByLookNameToField('PriceNameBy',FieldByName('PriceBy'));
+      //TXELookField(FieldByName('PriceNameBy')).ValueByLookNameToField('Price',FieldByName('PriceBy'));
+    end;
+end;
+
+procedure TMInvoiceForm.CheckBox1Click(Sender: TObject);
+ var sNew, ss, sdat: string;
+     i, len: integer;
+     kod_zd: integer;
+begin
+  inherited;
+
+  ss:=#13+'(';
+  (*if mdMat.isShop>0 then // столовая и магазин
+    begin
+      ss:=ss+'(';
+      for i:=0 to DepotList.Count-1 do
+        begin
+           if i>0 then ss:=ss+' or ';
+           ss:=ss+'(SourceDepot='+DepotList[i]+') or (DestDepot='+DepotList[i]+')';
+        end;
+      ss:=ss+') and ((Kredit='''+mdMat.GetDefaultAccount+''') or (Kredit=''41.00'') or (Kredit=''91.04'')) and (Operation<>8) and'
+    end
+  else
+    begin
+    end;*)
+  if UnsiUpperCase(UserName)<>'ANDY' then
+    begin
+      case mdMat.isShop of
+        39: kod_zd:=2;
+        43: kod_zd:=3;
+      else
+        kod_zd:=1;
+      end;
+      ss:=ss+'(KOD_ZD='+IntToStr(kod_zd)+') and ';
+    end;
+  sDat:=ss+'(DateDoc>=''';
+  if Pos(sDat,mdMat.MInvoiceHDeclar.Filter)=0 then
+    mdMat.MInvoiceHDeclar.Filter:=' '+sDat+FormatDateTime('dd.mm.yyyy', mdMat.WorkDate)+''')) ';
+
+  ss:=mdMat.MInvoiceHDeclar.Filter;
+  i:=Pos(sDat,ss);
+  len:=Length(sDat);
+  // начало
+  sNew:=Copy(ss,1,i + len -1);
+  ss:=Copy(ss,i + len + 10, Length(ss));
+  // дата отбора
+  if not CheckBox1.Checked then
+    begin
+      sNew:=sNew+FormatDateTime('dd.mm.yyyy', mdMat.WorkDate);
+    end
+  else
+      sNew:=sNew+'01.01.1900';
+  // концовка
+  sNew:=sNew + ss;
+  mdMat.MInvoiceHDeclar.Filter:=sNew;
+  mdMat.MInvoiceHDeclar.Filtered:=False;
+  mdMat.MInvoiceHDeclar.Filtered:=True;
+end;
+
+procedure TMInvoiceForm.EditSummaBtnClick(Sender: TObject);
+var ss: string;
+    LT: TTable;
+begin
+  inherited;
+  // расширенная информация по строке
+  // тип информации
+  ss:='Тип = ';
+  if MInvoiceForm.XEDbGrid1.Focused then
+    begin
+      ss := ss + 'строка документа'#13;
+      ss := ss + 'ID = ' + mdMat.MInvoiceTDeclarID.AsString + #13;
+      ss := ss + 'InvoiceID = ' + mdMat.MInvoiceTDeclarInvoiceID.AsString + #13;
+      LT := TTable(mdMat.MInvoiceTDeclar);
+    end
+  else
+    begin
+      ss := ss + 'шапка документа'#13;
+      ss := ss + 'ID = ' + mdMat.MInvoiceHDeclarID.AsString + #13;
+      LT := TTable(mdMat.MInvoiceHDeclar);
+    end;
+  ss := ss + '-----------------------'#13;
+  if LT.FieldByName('sDateIns').IsNull then
+    ss:=ss + 'Более подробная информация '#13'     о создателе документа отсутствует...'#13
+  else
+    begin
+      ss := ss + 'Создан - ' + GetFio(LT.FieldByName('sUserIns').AsInteger) + #13;
+      ss := ss + FormatDateTime(' - время создания: dd mmmm yyyy - hh:nn',LT.FieldByName('sDateIns').AsDateTime) + #13;
+    end;
+  ss := ss + '-----------------------'#13;
+  if LT.FieldByName('sDateUpd').IsNull then
+    begin
+      ss := ss + 'С момента создания изменений не было...'
+    end
+  else
+    begin
+      ss := ss + 'Изменён - ' + GetFio(LT.FieldByName('sUserUpd').AsInteger) + #13;
+      ss := ss + FormatDateTime(' - время изменения: dd mmmm yyyy - hh:nn',LT.FieldByName('sDateUpd').AsdateTime) + #13;
+    end;
+  MessageDlg(ss, mtInformation, [mbOk], 0);
+end;
+
+procedure TMInvoiceForm.btnSaveSSClick(Sender: TObject);
+begin
+  inherited;
+  if mdMat.MInvoiceT_SSDeclar.State<>dsBrowse then  mdMat.MInvoiceT_SSDeclar.Post;
+  if mdMat.MInvoiceTDeclar.State<>dsBrowse then mdMat.MInvoiceTDeclar.Post;
+end;
+
+procedure TMInvoiceForm.btnCancelSSClick(Sender: TObject);
+begin
+  inherited;
+  if mdMat.MInvoiceHDeclarIsLock.Value>0 then
+    begin
+      ShowMessage('Документ закрыт!');
+      exit;
+    end;
+
+  if mdMat.MInvoiceT_SSDeclar.State = dsBrowse then
+    begin
+     if mdMat.MInvoiceT_SSDeclar.RecordCount>0 then
+       begin
+         if mdMat.MInvoiceT_SSDeclarSTV.AsFloat=0 then
+            mdMat.MInvoiceT_SSDeclar.Delete
+         else
+          MessageDlg('Сначала надо занулить ставку!',mtError,[mbOk],0);
+       end;
+    end
+  else
+    begin
+      MessageDlg('Нельзя удалять несохраненную запись! Сначала ее надо сохранить!!!',mtError,[mbOk],0);
+    end;
+end;
+
+procedure TMInvoiceForm.GridDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn;
+  State: TGridDrawState);
+begin
+  inherited;
+  case mdMat.MInvoiceHDeclarOperation.AsInteger of
+  3, 9, 11, 13, 16: // приход
+    if (gdSelected in State) and (gdFocused in State) then
+      begin
+        TDBGrid(Sender).Canvas.Brush.Color:=clGreen;
+        TDBGrid(Sender).Canvas.Font.Color:=clYellow;
+      end
+    else
+      begin
+//        TDBGrid(Sender).Canvas.Brush.Color:=clWindow;
+        TDBGrid(Sender).Canvas.Font.Color:=clGreen;
+      end;
+  else
+    if (gdSelected in State) and (gdFocused in State) then
+      begin
+        TDBGrid(Sender).Canvas.Brush.Color:=clMaroon;
+        TDBGrid(Sender).Canvas.Font.Color:=clYellow;
+      end
+    else
+      begin
+//        TDBGrid(Sender).Canvas.Brush.Color:=clWindow;
+        TDBGrid(Sender).Canvas.Font.Color:=clMaroon;
+      end;
+  end;
+  TDBGrid(Sender).DefaultDrawColumnCell(Rect,DataCol,Column,State);
+end;
+
+procedure TMInvoiceForm.SetEnabledPanel999(State: Boolean; Control: TWinControl);
+  var i: integer;
+begin
+  for i:=0 to Control.ControlCount-1 do
+    begin
+      if not (Control.Controls[i] is TSpeedButton) then
+        Control.Controls[i].Enabled := State;
+      if Control.Controls[i] is TPanel then
+       SetEnabledPanel999(State, TPanel(Control.Controls[i]));
+    end;
+end;
+
+procedure TMInvoiceForm.btnEditSSClick(Sender: TObject);
+begin
+  inherited;
+  if AutoFlag then exit;
+  if mdMat.MInvoiceHDeclarIsLock.Value>0 then
+    begin
+      ShowMessage('Документ закрыт!');
+      exit;
+    end;
+
+  if mdMat.MInvoiceT_SSDeclar.RecordCount>0 then
+    begin
+       mdMat.MInvoiceT_SSDeclar.Edit;
+    end
+  else
+    begin
+      mdMat.MInvoiceT_SSDeclar.Insert;
+      mdMat.MInvoiceT_SSDeclarID.Value := mdMat.MInvoiceTDeclarID.Value;
+      mdMat.MInvoiceT_SSDeclarPricePrev.AsFloat := mdMat.MInvoiceTDeclarPriceBy.AsFloat;
+      AutoFlag:=True;
+      if mdMat.MInvoiceHDeclarSourceDepot.AsInteger in SkladSet then
+        mdMat.MInvoiceT_SSDeclarSTV.AsFloat := 0.5
+      else if mdMat.MInvoiceHDeclarDestDepot.AsInteger in SkladSet then
+        mdMat.MInvoiceT_SSDeclarSTV.AsFloat := -1
+      else
+        mdMat.MInvoiceT_SSDeclarSTV.AsFloat := 0;
+      AutoFlag:=False;
+      mdMat.MInvoiceT_SSDeclar.Edit;
+//      SetEnabledPanel999(True,Panel999);
+//      CheckEditSS(True);
+    end;
+  //if LookupEditAccount_SSName.Enabled then LookupEditAccount_SSName.SetFocus;
+end;
+
+procedure TMInvoiceForm.CheckEditSS(isEnabled: boolean);
+begin
+  btnEditSS.Enabled:=not isEnabled;
+  btnSaveSS.Enabled:=isEnabled;
+  btnCancelSS.Enabled:=not isEnabled;
+end;
+
+procedure TMInvoiceForm.XEDbGrid1Enter(Sender: TObject);
+begin
+  inherited;
+  if not mdMat.MaterialsEditLookup.Active then mdMat.MaterialsEditLookup.Active:=True;
+  if not mdMat.MaterialsEditLookupCalc.Active then mdMat.MaterialsEditLookupCalc.Active:=True;
+  if mdMat.MaterialsEditLookupCalc.Filtered then
+     begin
+       mdMat.MaterialsEditLookupCalc.Filtered:=False;
+       mdMat.MaterialsEditLookupCalc.Filter:='';
+     end;
+
+  if mdMat.MInvoiceT_SSDeclar.Active and (mdMat.MInvoiceT_SSDeclar.State<>dsBrowse) then
+    btnSaveSSClick(Sender);
+  mdMat.ShowDrgWindow;
+  PageControl1PanelIndexCombo.Enabled:=False;
+end;
+
+procedure TMInvoiceForm.FormShow(Sender: TObject);
+begin
+  inherited;
+  CheckEditSS(False);
+//  Button676.Visible:=mdMat.IsShop>0;
+  mdMat.ShowDrgWindow;
+  XEDbGrid1.TitleFont.Size:=12;
+end;
+
+procedure TMInvoiceForm.XEDbGrid1Exit(Sender: TObject);
+begin
+  inherited;
+  mdMat.ShowDrgWindow;
+  PageControl1PanelIndexCombo.Enabled:=True;
+end;
+
+procedure TMInvoiceForm.FormHide(Sender: TObject);
+begin
+  inherited;
+  mdMat.ShowDrgWindow;
+end;
+
+procedure TMInvoiceForm.SetLockGlyph(LockValue: integer);
+begin
+  if Assigned(Self) then
+    case LockValue of
+    0:  Button2.Caption:=' ';
+    1: begin
+        Button2.Caption:='Х ('+GetFio(mdMat.WhosLock)+')';
+        Button2.Font.Color:=clBlue;
+       end;
+    2: begin
+        Button2.Caption:='Х ('+GetFio(mdMat.WhosLock)+')';
+        Button2.Font.Color:=clRed;
+       end;
+    else Button2.Caption:='?';
+    end;
+end;
+
+procedure TMInvoiceForm.Button2Click(Sender: TObject);
+begin
+  inherited;
+  with mdMat do
+    begin
+      if MInvoiceHDeclar.State=dsBrowse then
+        begin
+          if mdMat.MInvoiceHDeclarIsLock.AsInteger>0 then
+            begin
+              if (mdMat.MInvoiceHDeclarIsLock.AsInteger>1) and (mdMat.LockBuhValue=1) then
+                MessageDlg('Вы не можете открыть документ закрытый бухгалтером?',mtError,[mbOk],0)
+              else
+              if MessageDlg('Вы хотите ОТКРЫТЬ документ?',mtInformation,[mbYes, mbNo],0)=mrYes then
+                begin
+                  MInvoiceHDeclar.Edit;
+                  MInvoiceHDeclarIsLock.AsInteger:=0;
+                  MInvoiceHDeclarIsLock.AsInteger:=0;
+                  MInvoiceHDeclar.Post;
+                end;
+            end
+          else
+            begin
+              if MessageDlg('Вы хотите ЗАКРЫТЬ документ?',mtInformation,[mbYes, mbNo],0)=mrYes then
+                begin
+                  MInvoiceHDeclar.Edit;
+                  MInvoiceHDeclarIsLock.AsInteger:=mdMat.LockBuhValue;
+                  MInvoiceHDeclarsUserLock.AsInteger:=ModuleBase.UsersDeclarEmpNo.AsInteger;;
+                  MInvoiceHDeclar.Post;
+                end;
+            end;
+        end
+      else
+        ShowMessage('Нельзя закрыть/открыть НЕСОХРАНЕННЫЙ документ');
+    end;
+end;
+
+procedure TMInvoiceForm.Button3Click(Sender: TObject);
+  var Material, PriceUc: extended;
+      Depot, i: integer;
+      Cond: TListObj;
+begin
+ with mdMat do
+   if MInvoiceTDeclar.Active and
+      (MInvoiceTDeclar.RecordCount>0) then
+      begin
+        Material:= MInvoiceTDeclarMaterial.AsInteger;
+        PriceUC:= MInvoiceTDeclarPriceUC.AsFloat;
+        Depot:= MInvoiceHDeclarSourceDepot.AsInteger;
+        if Depot=0 then Depot:= MInvoiceHDeclarDestDepot.AsInteger;
+        if not MMotionDeclar.Active then
+          MMotionDeclar.Active:=True;
+        MMotionC.Execute;
+        Cond:=TFilterItem(TXInquiryItem(MMotionC.Inquiries[0]).Filters.Data.Filters[0]).Conditions;
+        for i:=0 to Cond.Count-1 do
+          with TConditionItem(Cond[i]) do
+            if AnsiUpperCase(FieldName)='MATERIAL' then Value:=Material
+            else if AnsiUpperCase(FieldName)='PRICEUC' then Value:=PriceUC
+            else if AnsiUpperCase(FieldName)='DEPOT' then Value:=Depot;
+        MMotionC.PlayInquiry(MMotionC.Inquiries[0],Cond);
+      end;
+end;
+
+procedure TMInvoiceForm.ShowFields(Operation: integer; Dest: integer);
+begin
+{   ('MaterialName',  // 0
+     'Amount',        // 1
+     'DocAmount',     // 2
+     'Price_no_BID',  // 3
+     'BID',           // 4
+     'SummaBID',      // 5
+     'SummaBIDBy',    // 6
+     'PriceName',     // 7
+     'PriceNameBy',   // 8
+     'Summa',         // 9
+     'SummaBy',       // 10
+     'SummaOTKL',     // 11
+     'SummaOTKLBy',   // 12
+     'RateVAT',       // 13
+     'SummaVAT',      // 14
+     'SummaVatBy',    // 15
+     'SummaOTKL2',    // 16
+     'SummaOTKL2By',  // 17
+     'Total',         // 18
+     'TotalBy',       // 19
+     'Contract',      // 20
+     'DebitName',     // 21
+     'KreditName',    // 22
+     'DrgOperName'    // 23
+     'MonSpis'        // 24
+     'SummaCustomBy', // 25
+     'SaleAdd',       // 26
+     'SaleVat',       // 27
+     'PriceUC',       // 28
+     );}
+  case Operation of
+    9,13 :
+      begin
+        mdMat.ShowFields([0,1,8,19], AddFields.Checked);
+        mdMat.DrawInputFields([0,1,8]);
+      end;
+    3,14 :
+      begin
+        //if mdMat.IsShop then mdMat.ShowFields([0,1,3,19], AddFields.Checked)    else
+        mdMat.ShowFields([0,1,3,4,8,10,12,13,15,17,19,20], AddFields.Checked);
+        mdMat.DrawInputFields([0,1,3,4,12,13,17]);
+      end;
+    18 :  //приход по магазину
+      begin
+        mdMat.ShowFields([0,1,8,10,26,27,28], AddFields.Checked,2);
+        mdMat.DrawInputFields([0,1,28,26,27]);
+      end;
+    16:
+      begin
+        mdMat.ShowFields([0,1,3,4,8,10,12,13,15,17,19,20], True);
+        mdMat.DrawInputFields([0,1,4,12,13,17,19]);
+      end;
+    4:if Dest in [43, 55, 78] then
+        begin
+          mdMat.ShowFields([0,1,8,19,24], AddFields.Checked);
+          mdMat.DrawInputFields([0,1,8,24]);
+        end
+      else
+        begin
+          if mdMat.IsShop>0 then // магазины (расход как в продажах. Торговая надбавка + НДС)
+            begin
+              mdMat.ShowFields([0,1,3, 4, 8,10,13,15,19], AddFields.Checked);
+              mdMat.DrawInputFields([0,1,4, 8, 13]);
+              mdMat.SortInputFields(1);
+            end
+          else
+            begin
+              mdMat.ShowFields([0,1,8,19], AddFields.Checked);
+              mdMat.DrawInputFields([0,1,8]);
+            end;
+        end;
+    6:
+      if mdMat.IsShop>0 then
+        begin
+          mdMat.ShowFields([0,1,8,19{,20,28}], AddFields.Checked,3);
+          mdMat.DrawInputFields([0,1,8{,20}]);
+        end
+      else
+        begin
+          mdMat.ShowFields([0,1,8,19,28], AddFields.Checked);
+          mdMat.DrawInputFields([0,1,8]);
+        end;
+    8:
+      begin
+        if cbAllMat.Checked then
+          begin
+            mdMat.ShowFields([0,1,3,8,19], AddFields.Checked);
+            mdMat.DrawInputFields([0,1,3]);
+          end
+        else
+          begin
+            mdMat.ShowFields([0,1,8,19], AddFields.Checked);
+            mdMat.DrawInputFields([0,1,8]);
+          end;
+      end;
+    7, 15:
+      begin
+        mdMat.ShowFields([0,1,3, 4, 8,10,13,15,19], AddFields.Checked);
+        mdMat.DrawInputFields([0,1, 4, 8, 13]);
+        mdMat.SortInputFields(1);
+      end;
+    10:
+      begin
+        mdMat.ShowFields([0..2,5,6,8,10,13,12,15,19,20], True);
+        mdMat.DrawInputFields([]);
+      end;
+    11:
+      begin
+        mdMat.ShowFields([0,1,3,4,7..13,15,18,19,16,17,25], AddFields.Checked);
+        mdMat.DrawInputFields([0,1,3,4,7,8,11,12,13,16,17,25]);
+      end;
+  end;
+end;
+
+procedure TMInvoiceForm.AddFieldsClick(Sender: TObject);
+begin
+  inherited;
+  ShowFields(mdMat.MInvoiceHDeclar.FieldByName('Operation').AsInteger,
+    mdMat.MInvoiceHDeclar.FieldByName('DestDepot').AsInteger);
+end;
+
+procedure TMInvoiceForm.Button4Click(Sender: TObject);
+  var Depot: integer;
+      Account: string;
+begin
+ inherited;
+ with mdMat do
+   if MInvoiceTDeclar.Active and
+      (MInvoiceTDeclar.RecordCount>0) then
+      begin
+        if CheckRashod then
+          Depot:=MInvoiceHDeclarSourceDepot.AsInteger
+        else
+          Depot:=MInvoiceHDeclarDestDepot.AsInteger;
+        if CheckRashod then
+          Account:=MInvoiceTDeclarKredit.AsString
+        else
+          Account:=MInvoiceTDeclarDebit.AsString;
+        ShowMCard(MInvoiceTDeclarMaterial.AsInteger,
+           Depot,
+           MInvoiceTDeclarPriceUC.AsFloat,
+           StrToDate('01.01.1900'){WorkDate}, StrToDate('01.01.2020'),Account,
+           MInvoiceTDeclarPriceBy.AsFloat);
+      end;
+end;
+
+procedure TMInvoiceForm.DBText_IDInvoiceClick(Sender: TObject);
+begin
+  inherited;
+  mdMat.ShowServiceInfo;
+end;
+
+procedure TMInvoiceForm.cbAllMatClick(Sender: TObject);
+begin
+  inherited;
+  ShowFields(8, -1);
+end;
+
+procedure TMInvoiceForm.PrintBtnClick(Sender: TObject);
+begin
+  inherited;
+  // печать
+end;
+
+function TMInvoiceForm.GetFio(TN: integer): string;
+begin
+   TempQuery.SQL.Text:='select LastName + '' '' +  SubStr(FirstName,1,1) + ''.'' + '+
+    'SubStr(MiddleName,1,1) + ''.'' as Name ' +
+    'from STA.Workers where TabNum='+IntToStr(TN);
+   TempQuery.Open;
+   Result:=TempQuery.Fields[0].AsString;
+end;
+
+procedure TMInvoiceForm.etAmountChange(Sender: TObject);
+begin
+  inherited;
+{  with mdMat do
+    if MInvoiceT_ShopDeclar.Active and (MInvoiceT_ShopDeclar.State<>dsBrowse) then
+      begin
+        MInvoiceT_ShopDeclarSumma1.AsFloat:=MInvoiceT_ShopDeclarPrice1.AsFloat*MInvoiceT_ShopDeclarAmount.AsFloat;
+        MInvoiceT_ShopDeclarSumma2.AsFloat:=MInvoiceT_ShopDeclarPrice2.AsFloat*MInvoiceT_ShopDeclarAmount.AsFloat;
+        MInvoiceT_ShopDeclarOTKL.AsFloat:=MInvoiceTDeclarSummaBY.AsFloat-MInvoiceT_ShopDeclarSumma2.AsFloat;
+      end;}
+end;
+
+procedure TMInvoiceForm.Button676Click(Sender: TObject);
+ var InvoiceID: integer;
+     Depot: integer;
+begin
+  inherited;
+  //MdMaterials.mdMat.MSaleAddInvoiceC.Tag:=MdMaterials.mdMat.MInvoiceHDeclarID.AsInteger;
+  InvoiceID:=MdMaterials.mdMat.MInvoiceHDeclarID.AsInteger;
+  Depot:=MdMaterials.mdMat.MInvoiceHDeclarDestDepot.AsInteger;
+  with MdMaterials.mdMat.MSaleAddInvoiceDeclar do
+    begin
+      Filtered:=False;
+      Filter:='InvoiceID='+IntToStr(InvoiceID)+' and Depot='+IntToStr(Depot);
+      Filtered:=True;
+    end;
+  MdMaterials.mdMat.MSaleAddInvoiceC.Execute;
+end;
+
+procedure TMInvoiceForm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  if Key=VK_F6 then
+    begin
+      if (mdMat.MInvoiceHDeclar.State in [dsBrowse])
+        and (mdMat.MInvoiceTDeclar.State in [dsBrowse])
+      then
+        mdMat.PrintMInvoiceDoc
+      else
+        ShowMessage('Документ находится в режиме редактирования! Необходимо сохранить документ перед печатью накладной!');
+    end;
+end;
+
+Initialization
+  RegisterAliasXForm('MInvoiceForm', TMInvoiceForm);
+Finalization
+  UnRegisterXForm(TMInvoiceForm);
+end.
